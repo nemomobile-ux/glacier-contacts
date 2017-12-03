@@ -29,21 +29,29 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
+import QtQuick 2.6
 
-import QtQuick 2.0
-import com.nokia.meego 2.0
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
+
 import org.nemomobile.qmlcontacts 1.0
 import org.nemomobile.contacts 1.0
 
-Sheet {
+Page {
     id: newContactViewPage
 
-    acceptButtonText: qsTr("Save")
-    rejectButtonText: qsTr("Cancel")
+    headerTools:  HeaderToolsLayout {
+        id: hTools
+        title: qsTr("Edit contact")
+    }
 
-    acceptButtonEnabled: data_first.edited || data_last.edited ||
-                                 data_avatar.edited || phoneRepeater.edited ||
-                                 emailRepeater.edited
+    //acceptButtonText: qsTr("Save")
+    //rejectButtonText: qsTr("Cancel")
+
+    //acceptButtonEnabled: data_first.edited || data_last.edited ||
+    //                             data_avatar.edited || phoneRepeater.edited ||
+    //                             emailRepeater.edited
 
     property Person contact
 
@@ -59,7 +67,7 @@ Sheet {
         data_first.text = contact.firstName
         data_last.text = contact.lastName
         data_avatar.contact = contact
-        if (contact.avatarPath != "image://theme/icon-m-telephony-contact-avatar" )
+        if (contact.avatarPath != "image://theme/user" )
             data_avatar.originalSource = "image://nemothumbnail/" + contact.avatarPath
         else
             data_avatar.originalSource = contact.avatarPath
@@ -68,22 +76,22 @@ Sheet {
         emailRepeater.setModelData(contact.emailAddresses)
     }
 
-    content: Flickable {
+    Flickable {
         anchors.fill: parent
-        contentHeight: editorContent.childrenRect.height + UiConstants.DefaultMargin * 2
+        contentHeight: editorContent.childrenRect.height + Theme.itemSpacingMedium * 2
 
         Item {
             id: editorContent
-            anchors.leftMargin: UiConstants.DefaultMargin
-            anchors.rightMargin: UiConstants.DefaultMargin
+            anchors.leftMargin: Theme.itemSpacingMedium
+            anchors.rightMargin: Theme.itemSpacingMedium
             anchors.fill: parent
 
             Button {
                 id: avatarRect
                 width: height
-                anchors { top: parent.top; topMargin: UiConstants.DefaultMargin; left:parent.left; bottom: data_last.bottom }
+                anchors { top: parent.top; topMargin: Theme.itemSpacingMedium; left:parent.left; bottom: data_last.bottom }
                 onClicked: {
-                    var avatarPicker = pageStack.openSheet(Qt.resolvedUrl("AvatarPickerSheet.qml"), { contact: contact })
+                    var avatarPicker = pageStack.push(Qt.resolvedUrl("AvatarPickerSheet.qml"), { contact: contact })
                     avatarPicker.avatarPicked.disconnect()
                     avatarPicker.avatarPicked.connect(function(avatar) {
                         data_avatar.source = avatar
@@ -93,8 +101,8 @@ Sheet {
                     id: data_avatar
                     property string originalSource
                     property bool edited: source != originalSource
-                    width: parent.width - UiConstants.DefaultMargin
-                    height: parent.height - UiConstants.DefaultMargin
+                    width: parent.width - Theme.itemSpacingMedium
+                    height: parent.height - Theme.itemSpacingMedium
                     anchors.centerIn: parent
                     contact: newContactViewPage.contact
                 }
@@ -103,14 +111,14 @@ Sheet {
                 id: data_first
                 placeholderText: qsTr("First name")
                 property bool edited: text != contact.firstName
-                anchors { top: avatarRect.top; right: parent.right; left: avatarRect.right; leftMargin: UiConstants.DefaultMargin }
+                anchors { top: avatarRect.top; right: parent.right; left: avatarRect.right; leftMargin: Theme.itemSpacingMedium }
             }
             TextField {
                 id: data_last
                 placeholderText: qsTr("Last name")
                 property bool edited: text != contact.lastName
                 anchors { top: data_first.bottom;
-                    topMargin: UiConstants.DefaultMargin;
+                    topMargin: Theme.itemSpacingMedium;
                     right: parent.right; left: data_first.left
                 }
             }
@@ -118,10 +126,10 @@ Sheet {
             Column {
                 id: phones
                 anchors.top: data_last.bottom
-                anchors.topMargin: UiConstants.DefaultMargin
+                anchors.topMargin: Theme.itemSpacingMedium
                 anchors.left: parent.left
                 anchors.right: parent.right
-                spacing: UiConstants.DefaultMargin
+                spacing: Theme.itemSpacingMedium
 
                 EditableList {
                     id: phoneRepeater
@@ -133,10 +141,10 @@ Sheet {
 
             Column {
                 anchors.top: phones.bottom
-                anchors.topMargin: UiConstants.DefaultMargin
+                anchors.topMargin: Theme.itemSpacingMedium
                 anchors.left: parent.left
                 anchors.right: parent.right
-                spacing: UiConstants.DefaultMargin
+                spacing: Theme.itemSpacingMedium
 
                 EditableList {
                     id: emailRepeater
@@ -149,7 +157,7 @@ Sheet {
         }
     }
 
-    onAccepted: saveContact();
+    //onAccepted: saveContact();
 
     function saveContact() {
         contact.firstName = data_first.text

@@ -29,8 +29,12 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.0
-import com.nokia.meego 2.0
+import QtQuick 2.6
+
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
+
 import org.nemomobile.qmlcontacts 1.0
 import org.nemomobile.contacts 1.0
 import org.nemomobile.voicecall 1.0
@@ -38,6 +42,12 @@ import org.nemomobile.voicecall 1.0
 Page {
     id: detailViewPage
     property Person contact
+
+    headerTools:  HeaderToolsLayout {
+        id: hTools
+        title: contact.displayLabel
+        showBackButton: true
+    }
 
     VoiceCallManager {id:callManager}
     MessagesInterface { id: messagesInterface }
@@ -49,14 +59,14 @@ Page {
         }
     }
 
-    ContactCardContentWidget {
+    /*ContactCardContentWidget {
         id: detailViewContact
         anchors.fill: parent
         contact: detailViewPage.contact
         callManager: callManager
-    }
+    }*/
 
-    tools: ToolBarLayout {
+    /*tools: ToolBarLayout {
         ToolIcon {
             iconId: "icon-m-toolbar-back"
             onClicked: pageStack.pop()
@@ -88,6 +98,6 @@ Page {
                 onClicked: pageStack.openDialog(Qt.resolvedUrl("DeleteContactDialog.qml"), { contact: contact })
             }
         }
-    }
+    }*/
 }
 

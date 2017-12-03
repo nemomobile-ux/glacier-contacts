@@ -30,61 +30,70 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.0
-import com.nokia.meego 2.0
+import QtQuick 2.6
+
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
+
 import org.nemomobile.thumbnailer 1.0
-import org.nemomobile.qmlgallery 1.0
+import org.nemomobile.gallery 1.0
 import org.nemomobile.contacts 1.0
 
-Sheet {
+Page {
     id: avatarPickerSheet
 
-    acceptButtonText: qsTr("Select")
-    rejectButtonText: qsTr("Cancel")
+    headerTools:  HeaderToolsLayout {
+        id: hTools
+        title: qsTr("Add contact photo")
+    }
 
-    acceptButtonEnabled: avatarGridView.itemSelected
+    //acceptButtonText: qsTr("Select")
+    //rejectButtonText: qsTr("Cancel")
+
+    //acceptButtonEnabled: avatarGridView.itemSelected
 
     property Person contact
     signal avatarPicked(string pathToAvatar)
 
-    content: Rectangle {
+    Rectangle {
         // TODO: see if we can get theme asset for inverted background
         // cannot use theme.inverted, because that will change whole app's theme.
         color: "black"
         anchors.fill: parent
         GalleryView {
-        id: avatarGridView
-        property string filePath
-        property bool itemSelected: false
-        model: GalleryModel { }
-        delegate: GalleryDelegate {
-            id: delegateInstance
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    avatarGridView.itemSelected = true
-                    avatarGridView.currentIndex = index
-                    avatarGridView.filePath = url
+            id: avatarGridView
+            property string filePath
+            property bool itemSelected: false
+            model: GalleryModel { }
+            delegate: GalleryDelegate {
+                id: delegateInstance
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        avatarGridView.itemSelected = true
+                        avatarGridView.currentIndex = index
+                        avatarGridView.filePath = url
+                    }
                 }
-            }
-            Rectangle {
-                color: "blue"
-                opacity: 0.3
-                visible: delegateInstance.GridView.isCurrentItem && avatarGridView.itemSelected
-                anchors.fill: parent
+                Rectangle {
+                    color: "blue"
+                    opacity: 0.3
+                    visible: delegateInstance.GridView.isCurrentItem && avatarGridView.itemSelected
+                    anchors.fill: parent
+                }
             }
         }
     }
-}
 
-    onAccepted: {
+    /*onAccepted: {
         avatarPicked(avatarGridView.filePath)
         avatarGridView.itemSelected = false
     }
 
     onRejected: {
         avatarGridView.itemSelected = false
-    }
+    }*/
 }
 
 

@@ -29,15 +29,20 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.0
+import QtQuick 2.6
+
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
+
 import org.nemomobile.thumbnailer 1.0
 import org.nemomobile.contacts 1.0
 
 Image {
     fillMode: Image.PreserveAspectCrop
     asynchronous: true
-    width: UiConstants.ListItemHeightSmall
-    height: UiConstants.ListItemHeightSmall
+    width: Theme.itemHeightSmall
+    height: Theme.itemHeightSmall
     property Person contact
     sourceSize.width: width
     sourceSize.height: width
@@ -53,14 +58,14 @@ Image {
     }
 
     function avatarPotentiallyChanged() {
-        if (contact == null || contact.avatarPath == "image://theme/icon-m-telephony-contact-avatar")
-            source = "image://theme/icon-m-telephony-contact-avatar"
+        if (contact == null || contact.avatarPath == "image://theme/user" || contact.avatarPath == "image://theme/icon-m-telephony-contact-avatar")
+            source = "image://theme/user"
         else
             source = "image://nemoThumbnail/" + contact.avatarPath
     }
 
     onStatusChanged: {
-        var fallback = "image://theme/icon-m-telephony-contact-avatar"
+        var fallback = "image://theme/user"
         if (status == Image.Error || status == Image.Null) {
             if (source == fallback)
                 console.log("ContactAvatarImage failed to load fallback image!");

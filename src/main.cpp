@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2011 Robin Burchell <robin+mer@viroteck.net>
+ * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -29,63 +30,33 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-#include <QStandardPaths>
+#ifdef QT_QML_DEBUG
+#include <QtQuick>
+#endif
+
 #include <QGuiApplication>
 #include <QQuickView>
-#include <QQmlEngine>
-#include <QQmlContext>
-#include <QDebug>
-#include <QDir>
-#ifdef HAS_BOOSTER
-#include <MDeclarativeCache>
-#endif
+#include <QtQml>
 
-#ifdef HAS_BOOSTER
-Q_DECL_EXPORT
-#endif
 int main(int argc, char **argv)
 {
-    QGuiApplication *application;
-    QQuickView *view;
-#ifdef HAS_BOOSTER
-    application = MDeclarativeCache::qApplication(argc, argv);
-    view = MDeclarativeCache::qQuickView();
-#else
-    qWarning() << Q_FUNC_INFO << "Warning! Running without booster. This may be a bit slower.";
-    QGuiApplication stackApp(argc, argv);
-    QQuickView stackView;
-    application = &stackApp;
-    view = &stackView;
-#endif
+    QGuiApplication app(argc, argv);
+    app.setOrganizationName("NemoMobile");
+    app.setApplicationName("glacier-contacts");
 
-    bool isFullscreen = false;
-    QStringList arguments = application->arguments();
-    for (int i = 0; i < arguments.count(); ++i) {
-        QString parameter = arguments.at(i);
-        if (parameter == "-fullscreen") {
-            isFullscreen = true;
-        } else if (parameter == "-help") {
-            qDebug() << "Contacts application";
-            qDebug() << "-fullscreen   - show QML fullscreen";
-            exit(0);
-        }
-    }
+    QQmlApplicationEngine* engine = new QQmlApplicationEngine(QUrl::fromLocalFile("/usr/share/glacier-contacts/qml/main.qml"));
+    QObject *topLevel = engine->rootObjects().value(0);
+    QQuickWindow *window = qobject_cast<QQuickWindow *>(topLevel);
 
-    QObject::connect(view->engine(), SIGNAL(quit()), application, SLOT(quit()));
+    engine->rootContext()->setContextProperty("__window", window);
 
-    if (QFile::exists("main.qml"))
-        view->setSource(QUrl::fromLocalFile("main.qml"));
-    else
-        view->setSource(QUrl("qrc:/qml/main.qml"));
     // TODO: we could do with a plugin to access QDesktopServices paths
-    view->rootContext()->setContextProperty("systemAvatarDirectory", QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
-    view->rootContext()->setContextProperty("DocumentsLocation", QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
+    engine->rootContext()->setContextProperty("systemAvatarDirectory", QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
+    engine->rootContext()->setContextProperty("DocumentsLocation", QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
 
-    if (isFullscreen)
-        view->showFullScreen();
-    else
-        view->show();
+    window->setTitle(QObject::tr("Calc"));
+    window->showFullScreen();
 
-    return application->exec();
+    return app.exec();
 }
 

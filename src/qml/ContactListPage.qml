@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
+ * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -29,29 +30,43 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.0
-import com.nokia.meego 2.0
+import QtQuick 2.6
+
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
+
+import Nemo.Dialogs 1.0
+
 import org.nemomobile.qmlcontacts 1.0
 import org.nemomobile.contacts 1.0
 
 Page {
     id: groupedViewPage
 
-    PageHeader {
-        id: header
-        text: qsTr("Contacts")
-        color: "#007FFF"
+    headerTools:  HeaderToolsLayout {
+        id: hTools
+        title: qsTr("Contacts")
+
+        tools: [
+            ToolButton{
+                iconSource: "image://theme/user-plus"
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"));
+                }
+            }
+        ]
     }
 
     SearchBox {
-         id: searchbox
-         placeHolderText: "Search"
-         anchors.top: header.bottom
-         width: parent.width
-         onSearchTextChanged: {
-             app.contactListModel.search(searchbox.searchText);
-         }
-     }
+        id: searchbox
+        placeHolderText: "Search"
+        anchors.top: parent.top
+        width: parent.width
+        onSearchTextChanged: {
+            app.contactListModel.search(searchbox.searchText);
+        }
+    }
 
     Component {
         id: contactComponent
@@ -79,55 +94,15 @@ Page {
 
     }
 
-    tools: ToolBarLayout {
-        ToolIcon {
-            iconId: "icon-m-common-add"
-            onClicked: {
-                var editor = pageStack.openSheet(Qt.resolvedUrl("ContactEditorSheet.qml"));
-                editor.contact = contactComponent.createObject(editor)
-            }
-        }
-
-        ToolIcon {
-            iconId: "icon-m-toolbar-view-menu"
-            onClicked: (pageMenu.status == DialogStatus.Closed) ? pageMenu.open() : pageMenu.close()
-        }
-    }
-
-    Menu {
-        id: pageMenu
-        MenuLayout {
-            MenuItem {
-                text: "Import contacts"
-                onClicked: pageStack.openSheet(Qt.resolvedUrl("ContactImportSheet.qml"))
-            }
-
-            MenuItem {
-                text: "Export contacts"
-                onClicked: {
-                    var path = app.contactListModel.exportContacts()
-                    exportCompleteDialog.path = path
-                    exportCompleteDialog.open()
-                }
-            }
-        }
-    }
-
-    Dialog {
+    QueryDialog {
         id: exportCompleteDialog
         property string path
 
-        title: Label {
-            color: "white"
-            text: "Export completed"
-        }
+        acceptText: qsTr("Ok")
+        headingText: qsTr("Export completed");
+        subLabelText: qsTr("Export completed to ") + exportCompleteDialog.path
 
-        content: Label {
-            color: "white"
-            text: "Export completed to " + exportCompleteDialog.path
-            width: parent.width
-            height: paintedHeight
-        }
+        visible: false
     }
 }
 

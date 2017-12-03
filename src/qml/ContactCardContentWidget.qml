@@ -29,8 +29,12 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.0
-import com.nokia.meego 2.0
+import QtQuick 2.6
+
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
+
 import org.nemomobile.contacts 1.0
 import org.nemomobile.qmlcontacts 1.0
 import org.nemomobile.voicecall 1.0
@@ -47,14 +51,14 @@ Flickable {
 
     Item {
         id: header
-        height: avatar.height + UiConstants.DefaultMargin
+        height: avatar.height + Theme.itemSpacingMedium
         property int shortSize: parent.parent.width > parent.parent.height ? parent.parent.height : parent.parent.width
         ContactAvatarImage {
             id: avatar
             contact: detailViewPage.contact
             anchors.left: parent.left
             anchors.top: parent.top
-            anchors.margins: UiConstants.DefaultMargin
+            anchors.margins: Theme.itemSpacingMedium
             width: parent.shortSize * 0.3
             height: parent.shortSize * 0.3
         }
@@ -62,12 +66,12 @@ Flickable {
         Label {
             anchors.verticalCenter: avatar.verticalCenter
             anchors.left: avatar.right
-            anchors.leftMargin: UiConstants.DefaultMargin
+            anchors.leftMargin: Theme.itemSpacingMedium
             text: contact.displayLabel
         }
     }
 
-    SelectionDialog {
+    /*SelectionDialog {
         id: selectionDialog
         property int mode: 0 // 0: call, 1: sms, 2: message, 3: mail
 
@@ -81,16 +85,16 @@ Flickable {
                 
             accept()
         }
-    }
+    }*/
 
     Button {
         id: callButton
         anchors.top: header.bottom
-        anchors.topMargin: UiConstants.DefaultMargin
+        anchors.topMargin: Theme.itemSpacingMedium
         anchors.left: parent.left
-        anchors.leftMargin: UiConstants.DefaultMargin
-        height: contact.phoneNumbers.length ? UiConstants.ListItemHeightDefault - UiConstants.DefaultMargin : 0
-        width: parent.width - UiConstants.DefaultMargin * 2
+        anchors.leftMargin: Theme.itemSpacingMedium
+        height: contact.phoneNumbers.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
+        width: parent.width - Theme.itemSpacingMedium * 2
         visible: height != 0
         iconSource: "image://theme/icon-m-telephony-incoming-call"; // TODO: icon-m-toolbar-make-call
         text: "Call"
@@ -110,11 +114,11 @@ Flickable {
     Button {
         id: smsButton
         anchors.top: callButton.bottom
-        anchors.topMargin: UiConstants.DefaultMargin
+        anchors.topMargin: Theme.itemSpacingMedium
         anchors.left: parent.left
-        anchors.leftMargin: UiConstants.DefaultMargin
-        height: contact.phoneNumbers.length ? UiConstants.ListItemHeightDefault - UiConstants.DefaultMargin : 0
-        width: parent.width - UiConstants.DefaultMargin * 2
+        anchors.leftMargin: Theme.itemSpacingMedium
+        height: contact.phoneNumbers.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
+        width: parent.width - Theme.itemSpacingMedium * 2
         visible: height != 0
         iconSource: "image://theme/icon-m-toolbar-send-chat";
         text: "SMS"
@@ -134,11 +138,11 @@ Flickable {
     Button {
         id: messageButton
         anchors.top: smsButton.bottom
-        anchors.topMargin: UiConstants.DefaultMargin
+        anchors.topMargin: Theme.itemSpacingMedium
         anchors.left: parent.left
-        anchors.leftMargin: UiConstants.DefaultMargin
-        height: contact.accountUris.length ? UiConstants.ListItemHeightDefault - UiConstants.DefaultMargin : 0
-        width: parent.width - UiConstants.DefaultMargin * 2
+        anchors.leftMargin: Theme.itemSpacingMedium
+        height: contact.accountUris.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
+        width: parent.width - Theme.itemSpacingMedium * 2
         visible: height != 0
         iconSource: "image://theme/icon-m-toolbar-send-chat";
         text: "Message"
@@ -158,11 +162,11 @@ Flickable {
     Button {
         id: mailButton
         anchors.top: messageButton.bottom
-        anchors.topMargin: UiConstants.DefaultMargin
+        anchors.topMargin: Theme.itemSpacingMedium
         anchors.left: parent.left
-        anchors.leftMargin: UiConstants.DefaultMargin
-        height: contact.emailAddresses.length ? UiConstants.ListItemHeightDefault - UiConstants.DefaultMargin : 0
-        width: parent.width - UiConstants.DefaultMargin * 2
+        anchors.leftMargin: Theme.itemSpacingMedium
+        height: contact.emailAddresses.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
+        width: parent.width - Theme.itemSpacingMedium * 2
         visible: height != 0
         iconSource: "image://theme/icon-m-toolbar-send-sms"; // TODO: icon-m-toolbar-send-email
         text: "Mail"

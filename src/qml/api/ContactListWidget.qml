@@ -29,11 +29,15 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.0
-import com.nokia.meego 2.0
+import QtQuick 2.6
+
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
 
 ListView {
     id: groupedViewPortrait
+    showDecorator: true
 
     signal addNewContact
 
@@ -49,22 +53,15 @@ ListView {
 
         Text {
             anchors.right: parent.right
-            anchors.rightMargin: UiConstants.DefaultMargin
+            anchors.rightMargin: Theme.itemSpacingMedium
             text: section
             font.bold: true
         }
     }
 
-    ViewPlaceholder {
-        enabled: parent.count == 0
+    Label {
+        visible: parent.count == 0
         text: ((searching) ? qsTr("Contact not found.") : qsTr("You haven't added any contacts yet."));
-    }
-
-    SectionScroller {
-        listView: parent
-    }
-
-    ScrollDecorator {
-        flickableItem: parent
+        anchors.centerIn: parent
     }
 }

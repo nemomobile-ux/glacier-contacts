@@ -29,19 +29,22 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.0
-import com.nokia.meego 2.0
+import QtQuick 2.6
+
+import QtQuick.Controls 1.0
+import QtQuick.Controls.Nemo 1.0
+import QtQuick.Controls.Styles.Nemo 1.0
 
 MouseArea {
     id: listDelegate
 
-    height: UiConstants.ListItemHeightDefault
+    height: Theme.itemHeightMedium
     width: parent.width
 
     ContactAvatarImage {
         id: photo
         contact: model.person
-        x: UiConstants.DefaultMargin
+        x: Theme.itemSpacingMedium
         anchors.verticalCenter: parent.verticalCenter
     }
 
@@ -53,17 +56,17 @@ MouseArea {
             left: photo.right;
             right: favorite.visible ? favorite.left : parent.right
             verticalCenter: parent.verticalCenter;
-            leftMargin: UiConstants.DefaultMargin
+            leftMargin: Theme.itemSpacingMedium
         }
     }
 
     // TODO: only instantiate if required?
     Image {
         id: favorite
-        source: "image://theme/icon-m-toolbar-favorite-mark"
+        source: "image://theme/bookmark-o"
         visible: model.person.favorite
         anchors.right: parent.right
-        anchors.rightMargin: UiConstants.DefaultMargin
+        anchors.rightMargin: Theme.itemSpacingMedium
         anchors.verticalCenter: parent.verticalCenter
     }
 
