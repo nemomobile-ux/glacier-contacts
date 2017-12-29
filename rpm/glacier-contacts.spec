@@ -6,7 +6,7 @@ Name:       glacier-contacts
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 
 Summary:    Contacts application for nemo
-Version:    0.5.0
+Version:    0.6.0
 Release:    1
 Group:      Applications/System
 License:    GPLv2
