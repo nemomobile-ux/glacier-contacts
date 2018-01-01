@@ -32,7 +32,11 @@ api.files = src/qml/api/*
 api.path = $$[QT_INSTALL_QML]/org/nemomobile/qmlcontacts
 INSTALLS += api
 
-TRANSLATIONS += *.qml
+TRANSLATIONS += translations/$${PROJECT_NAME}_en.ts\
+                translations/$${PROJECT_NAME}_ru.ts
+i18n_files.files = translations
+i18n_files.path = /usr/share/$$TARGET
+INSTALLS += i18n_files
 
 DISTFILES += \
     src/qml/api/qmldir \
@@ -51,6 +55,8 @@ DISTFILES += \
     src/qml/SearchBox.qml \
     src/glacier-contacts.desktop \
     rpm/glacier-contacts.spec \
-    src/qml/glacier-contacts.qml
+    src/qml/glacier-contacts.qml \
+    translations/glacier-contacts_en.ts \
+    translations/glacier-contacts_ru.ts
 
 PKGCONFIG += glacierapp

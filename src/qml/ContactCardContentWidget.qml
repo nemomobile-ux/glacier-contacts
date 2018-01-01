@@ -121,7 +121,7 @@ Flickable {
         width: parent.width - Theme.itemSpacingMedium * 2
         visible: height != 0
         iconSource: "image://theme/icon-m-toolbar-send-chat";
-        text: "SMS"
+        text: qsTr("SMS")
         onClicked: {
             if (contact.phoneNumbers.length == 1) {
                 messagesInterface.startSMS(contact.phoneNumbers[0])
@@ -145,7 +145,7 @@ Flickable {
         width: parent.width - Theme.itemSpacingMedium * 2
         visible: height != 0
         iconSource: "image://theme/icon-m-toolbar-send-chat";
-        text: "Message"
+        text: qsTr("Message")
         onClicked: {
             if (contact.accountUris.length == 1) {
                 messagesInterface.startConversation(contact.accountPaths[0], contact.accountUris[0])
@@ -169,7 +169,7 @@ Flickable {
         width: parent.width - Theme.itemSpacingMedium * 2
         visible: height != 0
         iconSource: "image://theme/icon-m-toolbar-send-sms"; // TODO: icon-m-toolbar-send-email
-        text: "Mail"
+        text: qsTr("Mail")
         onClicked: {
             console.log("TODO: integrate with mail client")
             if (contact.emailAddresses.length == 1)

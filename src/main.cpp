@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     app->setOrganizationName("NemoMobile");
 
     QQuickWindow *window = GlacierApp::showWindow();
-    window->setTitle(QObject::tr("Calc"));
+    window->setTitle(QObject::tr("Contacts"));
 
     return app->exec();
 }

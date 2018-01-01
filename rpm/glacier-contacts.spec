@@ -32,6 +32,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(glacierapp)
 BuildRequires:  desktop-file-utils
+BuildRequires:  qt5-qttools-linguist
 Provides:   meego-handset-people > 0.2.32
 Provides:   meego-handset-people-branding-upstream > 0.2.32
 Obsoletes:   meego-handset-people <= 0.2.32
@@ -51,6 +52,7 @@ Contacts application using Qt Quick for Nemo Mobile.
 rm -rf %{buildroot}
 %qmake5_install
 
+lrelease %{buildroot}%{_datadir}/%{name}/translations/*.ts
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \

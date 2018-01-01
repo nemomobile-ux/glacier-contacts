@@ -40,10 +40,10 @@ import org.nemomobile.contacts 1.0
 QueryDialog {
     property Person contact: Person {}
 
-    titleText: "Delete " + contact.displayLabel + "?"
-    message: "Are you sure?"
-    acceptButtonText: "Yes"
-    rejectButtonText: "No"
+    titleText: qsTr("Delete")+ " " + contact.displayLabel + "?"
+    message: qsTr("Are you sure?")
+    acceptButtonText: qsTr("Yes")
+    rejectButtonText: qsTr("No")
 
     onAccepted: {
         app.contactListModel.removePerson(contact)

@@ -60,7 +60,7 @@ Page {
 
     SearchBox {
         id: searchbox
-        placeHolderText: "Search"
+        placeHolderText: qsTr("Search")
         anchors.top: parent.top
         width: parent.width
         onSearchTextChanged: {

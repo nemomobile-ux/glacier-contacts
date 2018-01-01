@@ -42,8 +42,8 @@ import org.nemomobile.qmlfilemuncher 1.0
 
 Sheet {
     id: newContactViewPage
-    acceptButtonText: "Import"
-    rejectButtonText: "Cancel"
+    acceptButtonText: qsTr("Import")
+    rejectButtonText: qsTr("Cancel")
 
     onStatusChanged: {
         if (status == DialogStatus.Opening) {
@@ -90,12 +90,12 @@ Sheet {
 
         title: Label {
             color: "white"
-            text: "Import completed"
+            text: qsTr("Import completed")
         }
 
         content: Label {
             color: "white"
-            text: "Imported " + importCompletedDialog.contactCount + " contacts"
+            text: qsTr("Imported") + " " + importCompletedDialog.contactCount + " "+qsTr("contacts")
             width: parent.width
             height: paintedHeight
         }
