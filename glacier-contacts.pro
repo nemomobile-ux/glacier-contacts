@@ -1,4 +1,4 @@
-VERSION = 0.4.0
+VERSION = 0.7.0
 PROJECT_NAME = glacier-contacts
 TEMPLATE = app
 CONFIG += ordered mobility hide_symbols
@@ -6,6 +6,8 @@ MOBILITY += contacts
 QT += quick
 TARGET = $$PROJECT_NAME
 CONFIG -= app_bundle # OS X
+
+LIBS += -lglacierapp
 
 CONFIG += link_pkgconfig
 
@@ -45,9 +47,10 @@ DISTFILES += \
     src/qml/ContactListPage.qml \
     src/qml/DeleteContactDialog.qml \
     src/qml/EditableList.qml \
-    src/qml/main.qml \
     src/qml/MessagesInterface.qml \
     src/qml/SearchBox.qml \
     src/glacier-contacts.desktop \
-    rpm/glacier-contacts.spec
+    rpm/glacier-contacts.spec \
+    src/qml/glacier-contacts.qml
 
+PKGCONFIG += glacierapp

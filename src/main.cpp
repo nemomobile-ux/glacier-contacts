@@ -38,25 +38,16 @@
 #include <QQuickView>
 #include <QtQml>
 
+#include <glacierapp.h>
+
 int main(int argc, char **argv)
 {
-    QGuiApplication app(argc, argv);
-    app.setOrganizationName("NemoMobile");
-    app.setApplicationName("glacier-contacts");
+    QGuiApplication *app = GlacierApp::app(argc, argv);
+    app->setOrganizationName("NemoMobile");
 
-    QQmlApplicationEngine* engine = new QQmlApplicationEngine(QUrl::fromLocalFile("/usr/share/glacier-contacts/qml/main.qml"));
-    QObject *topLevel = engine->rootObjects().value(0);
-    QQuickWindow *window = qobject_cast<QQuickWindow *>(topLevel);
-
-    engine->rootContext()->setContextProperty("__window", window);
-
-    // TODO: we could do with a plugin to access QDesktopServices paths
-    engine->rootContext()->setContextProperty("systemAvatarDirectory", QStandardPaths::writableLocation(QStandardPaths::PicturesLocation));
-    engine->rootContext()->setContextProperty("DocumentsLocation", QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
-
+    QQuickWindow *window = GlacierApp::showWindow();
     window->setTitle(QObject::tr("Calc"));
-    window->showFullScreen();
 
-    return app.exec();
+    return app->exec();
 }
 

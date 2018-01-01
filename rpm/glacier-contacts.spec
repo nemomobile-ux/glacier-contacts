@@ -6,7 +6,7 @@ Name:       glacier-contacts
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 
 Summary:    Contacts application for nemo
-Version:    0.6.0
+Version:    0.7.0
 Release:    1
 Group:      Applications/System
 License:    GPLv2
@@ -24,11 +24,13 @@ Requires:   glacier-gallery
 Requires:   glacier-filemuncher
 Requires:   contactsd
 Requires:   nemo-qml-plugin-dbus-qt5
+Requires:   libglacierapp
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Contacts)
 BuildRequires:  pkgconfig(qdeclarative5-boostable)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(glacierapp)
 BuildRequires:  desktop-file-utils
 Provides:   meego-handset-people > 0.2.32
 Provides:   meego-handset-people-branding-upstream > 0.2.32
