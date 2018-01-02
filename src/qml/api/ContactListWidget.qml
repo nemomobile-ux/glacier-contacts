@@ -46,18 +46,6 @@ ListView {
     cacheBuffer: height
     section.property: "sectionBucket"
     section.criteria: ViewSection.FirstCharacter
-    section.delegate: Rectangle {
-        width: parent.width
-        height: childrenRect.height
-        color: "lightsteelblue"
-
-        Text {
-            anchors.right: parent.right
-            anchors.rightMargin: Theme.itemSpacingMedium
-            text: section
-            font.bold: true
-        }
-    }
 
     Label {
         visible: parent.count == 0

@@ -35,45 +35,23 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
-MouseArea {
-    id: listDelegate
+ListViewItemWithActions {
+    id: card
+    label: model.person.displayLabel
+    icon: getAvatar()
+    showNext: true
 
-    height: Theme.itemHeightMedium
-    width: parent.width
-
-    ContactAvatarImage {
-        id: photo
-        contact: model.person
-        x: Theme.itemSpacingMedium
-        anchors.verticalCenter: parent.verticalCenter
-    }
-
-    Label {
-        id: nameFirst
-        text: model.person.displayLabel
-        elide: Text.ElideRight
-        anchors {
-            left: photo.right;
-            right: favorite.visible ? favorite.left : parent.right
-            verticalCenter: parent.verticalCenter;
-            leftMargin: Theme.itemSpacingMedium
+    function getAvatar() {
+        var av_source;
+        if (model.person == null || model.person.avatarPath == "image://theme/user" || model.person.avatarPath == "image://theme/icon-m-telephony-contact-avatar")
+        {
+            av_source = "image://theme/user"
         }
+        else
+        {
+            av_source = model.person.avatarPath
+        }
+        return av_source;
     }
-
-    // TODO: only instantiate if required?
-    Image {
-        id: favorite
-        source: "image://theme/bookmark-o"
-        visible: model.person.favorite
-        anchors.right: parent.right
-        anchors.rightMargin: Theme.itemSpacingMedium
-        anchors.verticalCenter: parent.verticalCenter
-    }
-
-    states: State {
-        name: "pressed"; when: pressed == true
-        PropertyChanges { target: listDelegate; opacity: .7}
-    }
-
 }
 
