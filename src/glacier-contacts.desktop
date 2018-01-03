@@ -1,6 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=People
-Icon=icon-app-contacts
-Exec=invoker --single-instance -r 5 --type=qt-components-qt5 /usr/bin/qmlcontacts -fullscreen
+Icon=/usr/share/glacier-contacts/icon-app-contacts.png
+Exec=/usr/bin/glacier-contacts
 Comment=Nemo People Application
+Name[ru]=Контакты

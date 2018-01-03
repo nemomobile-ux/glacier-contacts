@@ -22,6 +22,10 @@ desktop.files = src/$${PROJECT_NAME}.desktop
 desktop.path = /usr/share/applications
 INSTALLS += desktop
 
+icon.files = icon-app-contacts.png
+icon.path = /usr/share/$${PROJECT_NAME}
+INSTALLS += icon
+
 qml.files = src/qml/*.qml
 qml.files += src/qml/*.js
 qml.path = /usr/share/$${PROJECT_NAME}/qml
@@ -57,6 +61,7 @@ DISTFILES += \
     rpm/glacier-contacts.spec \
     src/qml/glacier-contacts.qml \
     translations/glacier-contacts_en.ts \
-    translations/glacier-contacts_ru.ts
+    translations/glacier-contacts_ru.ts \
+    icon-app-contacts.png
 
 PKGCONFIG += glacierapp
