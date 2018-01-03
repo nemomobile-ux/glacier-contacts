@@ -41,17 +41,13 @@ import org.nemomobile.contacts 1.0
 Page {
     id: newContactViewPage
 
+    property bool add: false
+
     headerTools:  HeaderToolsLayout {
         id: hTools
-        title: qsTr("Edit contact")
+        title: add ? qsTr("Add contact") : qsTr("Edit contact")
+        showBackButton: true
     }
-
-    //acceptButtonText: qsTr("Save")
-    //rejectButtonText: qsTr("Cancel")
-
-    //acceptButtonEnabled: data_first.edited || data_last.edited ||
-    //                             data_avatar.edited || phoneRepeater.edited ||
-    //                             emailRepeater.edited
 
     property Person contact
 
@@ -61,7 +57,6 @@ Page {
             reject()
         }
     }
-
 
     onContactChanged: {
         data_first.text = contact.firstName
@@ -78,86 +73,124 @@ Page {
 
     Flickable {
         anchors.fill: parent
-        contentHeight: editorContent.childrenRect.height + Theme.itemSpacingMedium * 2
+        contentHeight: childrenRect.height + Theme.itemSpacingMedium * 2
 
-        Item {
-            id: editorContent
-            anchors.leftMargin: Theme.itemSpacingMedium
-            anchors.rightMargin: Theme.itemSpacingMedium
-            anchors.fill: parent
 
-            Button {
-                id: avatarRect
-                width: height
-                anchors { top: parent.top; topMargin: Theme.itemSpacingMedium; left:parent.left; bottom: data_last.bottom }
-                onClicked: {
-                    var avatarPicker = pageStack.push(Qt.resolvedUrl("AvatarPickerSheet.qml"), { contact: contact })
-                    avatarPicker.avatarPicked.disconnect()
-                    avatarPicker.avatarPicked.connect(function(avatar) {
-                        data_avatar.source = avatar
-                    });
-                }
-                ContactAvatarImage {
-                    id: data_avatar
-                    property string originalSource
-                    property bool edited: source != originalSource
-                    width: parent.width - Theme.itemSpacingMedium
-                    height: parent.height - Theme.itemSpacingMedium
-                    anchors.centerIn: parent
-                    contact: newContactViewPage.contact
-                }
-            }
-            TextField {
-                id: data_first
-                placeholderText: qsTr("First name")
-                property bool edited: text != contact.firstName
-                anchors { top: avatarRect.top; right: parent.right; left: avatarRect.right; leftMargin: Theme.itemSpacingMedium }
-            }
-            TextField {
-                id: data_last
-                placeholderText: qsTr("Last name")
-                property bool edited: text != contact.lastName
-                anchors { top: data_first.bottom;
-                    topMargin: Theme.itemSpacingMedium;
-                    right: parent.right; left: data_first.left
-                }
+        Button {
+            id: avatarRect
+            width: parent.width/3
+            height: width
+
+            anchors {
+                top: parent.top;
+                topMargin: Theme.itemSpacingMedium;
+                horizontalCenter: parent.horizontalCenter
             }
 
-            Column {
-                id: phones
-                anchors.top: data_last.bottom
-                anchors.topMargin: Theme.itemSpacingMedium
-                anchors.left: parent.left
-                anchors.right: parent.right
-                spacing: Theme.itemSpacingMedium
-
-                EditableList {
-                    id: phoneRepeater
-                    placeholderText: qsTr("Phone number")
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                }
+            onClicked: {
+                var avatarPicker = pageStack.push(Qt.resolvedUrl("AvatarPickerSheet.qml"), { contact: contact })
+                avatarPicker.avatarPicked.disconnect()
+                avatarPicker.avatarPicked.connect(function(avatar) {
+                    data_avatar.source = avatar
+                });
             }
-
-            Column {
-                anchors.top: phones.bottom
-                anchors.topMargin: Theme.itemSpacingMedium
-                anchors.left: parent.left
-                anchors.right: parent.right
-                spacing: Theme.itemSpacingMedium
-
-                EditableList {
-                    id: emailRepeater
-                    placeholderText: qsTr("Email address")
-                    anchors.left: parent.left
-                    anchors.right: parent.right
-                }
+            ContactAvatarImage {
+                id: data_avatar
+                property string originalSource
+                property bool edited: source != originalSource
+                width: parent.width - Theme.itemSpacingMedium
+                height: parent.height - Theme.itemSpacingMedium
+                anchors.centerIn: parent
+                contact: newContactViewPage.contact
             }
+        }
 
+        TextField {
+            id: data_first
+            placeholderText: qsTr("First name")
+            property bool edited: text != contact.firstName
+            anchors {
+                top: avatarRect.bottom;
+                topMargin: Theme.itemSpacingMedium
+                left: parent.left;
+                leftMargin: Theme.itemSpacingMedium
+            }
+            width: parent.width-Theme.itemSpacingMedium*2
+            font.pixelSize: Theme.fontSizeLarge
+        }
+
+        TextField {
+            id: data_last
+            placeholderText: qsTr("Last name")
+            property bool edited: text != contact.lastName
+            anchors {
+                top: data_first.bottom;
+                topMargin: Theme.itemSpacingMedium;
+                left: parent.left
+                leftMargin: Theme.itemSpacingMedium
+            }
+            width: parent.width-Theme.itemSpacingMedium*2
+            font.pixelSize: Theme.fontSizeLarge
+        }
+
+        Column {
+            id: phones
+            anchors{
+                top: data_last.bottom
+                topMargin: Theme.itemSpacingMedium
+            }
+            width: parent.width
+            spacing: Theme.itemSpacingMedium
+
+
+            EditableList {
+                id: phoneRepeater
+                placeholderText: qsTr("Phone number")
+                width: parent.width
+            }
+        }
+
+        Column {
+            id: mails
+            anchors{
+                top: phones.bottom
+                topMargin: Theme.itemSpacingMedium
+            }
+            spacing: Theme.itemSpacingMedium
+            width: parent.width
+            EditableList {
+                id: emailRepeater
+                placeholderText: qsTr("Email address")
+                width: parent.width
+            }
+        }
+
+        Button{
+            id: saveButton
+            text: qsTr("Save")
+            width: parent.width/2-Theme.itemSpacingMedium
+            anchors{
+                top: mails.bottom
+                topMargin: Theme.itemSpacingMedium
+                left: parent.left
+                leftMargin: Theme.itemSpacingMedium
+            }
+            onClicked: saveContact()
+            enabled: data_first.edited || data_last.edited || data_avatar.edited || phoneRepeater.edited || emailRepeater.edited
+        }
+
+        Button{
+            id: cancelButton
+            text: qsTr("Cancel")
+            width: parent.width/2-Theme.itemSpacingMedium
+            anchors{
+                top: mails.bottom
+                topMargin: Theme.itemSpacingMedium
+                left: saveButton.right
+            }
+            onClicked: pageStack.pop();
         }
     }
-
-    //onAccepted: saveContact();
 
     function saveContact() {
         contact.firstName = data_first.text
