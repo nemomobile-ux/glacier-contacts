@@ -71,7 +71,6 @@ Item {
         }
 
         font.pixelSize: Theme.fontSizeLarge
-        style: touchStyle
     }
     // Search icon, just for styling the SearchBox a bit.
     Image {

@@ -24,7 +24,7 @@ Requires:   glacier-gallery
 Requires:   glacier-filemuncher
 Requires:   contactsd
 Requires:   nemo-qml-plugin-dbus-qt5
-Requires:   libglacierapp
+Requires:   libglacierapp >= 0.1.1
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Contacts)
 BuildRequires:  pkgconfig(qdeclarative5-boostable)
