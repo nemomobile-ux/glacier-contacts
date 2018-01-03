@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
+ * Copyright (C) 2018 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -35,17 +36,28 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls.Nemo 1.0
 import QtQuick.Controls.Styles.Nemo 1.0
 
+import Nemo.Dialogs 1.0
+
 import org.nemomobile.contacts 1.0
 
 QueryDialog {
+    id: deleteConfirmationDialog
     property Person contact: Person {}
 
-    titleText: qsTr("Delete")+ " " + contact.displayLabel + "?"
-    message: qsTr("Are you sure?")
-    acceptButtonText: qsTr("Yes")
-    rejectButtonText: qsTr("No")
+    inline: false
+
+    subLabelText: qsTr("Delete contact")+ " " + contact.displayLabel + "?"
+    headingText: qsTr("Are you sure?")
+    acceptText: qsTr("Yes")
+    cancelText: qsTr("No")
 
     onAccepted: {
         app.contactListModel.removePerson(contact)
     }
+
+    onSelected:{
+        visible = false;
+    }
+
+    visible: false
 }

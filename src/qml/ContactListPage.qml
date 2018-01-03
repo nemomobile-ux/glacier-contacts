@@ -153,27 +153,8 @@ Page {
         visible: false
     }
 
-    QueryDialog {
+    DeleteContactDialog {
         id: deleteConfirmationDialog
-        property Person contact: Person {}
-
-        inline: false
-
-        subLabelText: qsTr("Delete contact")+ " " + contact.displayLabel + "?"
-        headingText: qsTr("Are you sure?")
-        acceptText: qsTr("Yes")
-        cancelText: qsTr("No")
-
-        onAccepted: {
-            app.contactListModel.removePerson(contact)
-        }
-
-        onSelected:{
-            visible = false;
-        }
-
-        visible: false
     }
-
 }
 
