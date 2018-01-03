@@ -1,7 +1,8 @@
 /****************************************************************************
  **
- ** Copyright (C) 2012 Robin Burchell <robin+mer@viroteck.net>
  ** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+ ** Copyright (C) 2012 Robin Burchell <robin+mer@viroteck.net>
+ ** Copyright (C) 2018 Chupligin Sergey <neochapay@gmail.com>
  **
  ** $QT_BEGIN_LICENSE:BSD$
  ** You may use this file under the terms of the BSD license as follows:
@@ -58,18 +59,7 @@ Item {
 
     TextField {
         id: searchTextInput
-        height: parent.height*0.8
-
-        // Helper function ripped from QQC platform sources. Used for
-        // getting the correct URI for the platform toolbar images.
-        function __handleIconSource(iconId) {
-            var prefix = "icon-m-"
-            // check if id starts with prefix and use it as is
-            // otherwise append prefix and use the inverted version if required
-            if (iconId.indexOf(prefix) !== 0)
-                iconId =  prefix.concat(iconId).concat;
-            return "image://theme/" + iconId;
-        }
+        height: parent.height
 
         inputMethodHints: Qt.ImhNoPredictiveText
 
@@ -79,6 +69,9 @@ Item {
             verticalCenter: parent.verticalCenter
             margins: Theme.itemSpacingMedium
         }
+
+        font.pixelSize: Theme.fontSizeLarge
+        style: touchStyle
     }
     // Search icon, just for styling the SearchBox a bit.
     Image {
@@ -105,8 +98,10 @@ Item {
         height: parent.height*0.8
         width: height
 
+        source: "image://theme/chevron-left"
+
         anchors {
-            right: parent.right
+            right: searchTextInput.right
             verticalCenter: parent.verticalCenter
             margins: Theme.itemSpacingMedium
         }
