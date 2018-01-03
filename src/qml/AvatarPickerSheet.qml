@@ -46,6 +46,7 @@ Page {
     headerTools:  HeaderToolsLayout {
         id: hTools
         title: qsTr("Add contact photo")
+        showBackButton: true
     }
 
     //acceptButtonText: qsTr("Select")
