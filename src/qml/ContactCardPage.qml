@@ -47,6 +47,35 @@ Page {
         id: hTools
         title: contact.displayLabel
         showBackButton: true
+        tools: [
+            ToolButton{
+                iconSource: "image://theme/trash"
+                onClicked:{
+                    deleteConfirmationDialog.contact = contact
+                    deleteConfirmationDialog.visible = true
+                }
+            }
+            ,
+            ToolButton{
+                iconSource: "image://theme/pencil"
+                onClicked: pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"), { contact: contact })
+            },
+            ToolButton{
+                iconSource: contact.favorite ? "image://theme/bookmark" : "image://theme/bookmark-o"
+                onClicked: {
+                    if(contact.favorite)
+                    {
+                        contact.favorite = false
+                    }
+                    else
+                    {
+                        contact.favorite = true
+                    }
+                    app.contactListModel.savePerson(detailViewPage.contact)
+                }
+            }
+
+        ]
     }
 
     VoiceCallManager {id:callManager}
@@ -54,50 +83,24 @@ Page {
 
     Connections {
         target: contact
-        onContactRemoved: {
-            pageStack.pop()
-        }
+        onContactRemoved: pageStack.pop()
     }
 
-    /*ContactCardContentWidget {
+    Connections {
+        target: deleteConfirmationDialog
+        onAccepted: pageStack.pop();
+    }
+
+    ContactCardContentWidget {
         id: detailViewContact
         anchors.fill: parent
         contact: detailViewPage.contact
         callManager: callManager
-    }*/
-
-    /*tools: ToolBarLayout {
-        ToolIcon {
-            iconId: "icon-m-toolbar-back"
-            onClicked: pageStack.pop()
-        }
-        ToolIcon {
-            iconId: "icon-m-toolbar-edit"
-            onClicked: pageStack.openSheet(Qt.resolvedUrl("ContactEditorSheet.qml"), { contact: contact })
-        }
-        ToolIcon {
-            iconId: contact.favorite ? "icon-m-toolbar-favorite-mark" : "icon-m-toolbar-favorite-unmark"
-            onClicked: {
-                contact.favorite = !contact.favorite
-
-                // TODO: delay saving to save CPU on repeated toggling
-                app.contactListModel.savePerson(detailViewPage.contact)
-            }
-        }
-        ToolIcon {
-            iconId: "icon-m-toolbar-view-menu"
-            onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close()
-        }
     }
 
-    Menu {
-        id: myMenu
-        MenuLayout {
-            MenuItem {
-                text: "Delete";
-                onClicked: pageStack.openDialog(Qt.resolvedUrl("DeleteContactDialog.qml"), { contact: contact })
-            }
-        }
-    }*/
+
+    DeleteContactDialog {
+        id: deleteConfirmationDialog
+    }
 }
 
