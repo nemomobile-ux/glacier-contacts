@@ -15,7 +15,7 @@ Source0:    %{name}-%{version}.tar.bz2
 
 Requires:   qt-components-qt5
 Requires:   qt5-qtquickcontrols
-Requires:   qt5-qtquickcontrols-nemo
+Requires:   qt5-qtquickcontrols-nemo >= 5.3.2
 
 Requires:   nemo-qml-plugin-thumbnailer-qt5
 Requires:   nemo-qml-plugin-contacts-qt5

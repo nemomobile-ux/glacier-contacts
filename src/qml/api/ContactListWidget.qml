@@ -37,7 +37,6 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 ListView {
     id: groupedViewPortrait
-    showDecorator: true
 
     signal addNewContact
 
@@ -51,5 +50,9 @@ ListView {
         visible: parent.count == 0
         text: ((searching) ? qsTr("Contact not found.") : qsTr("You haven't added any contacts yet."));
         anchors.centerIn: parent
+    }
+
+    ScrollDecorator{
+        flickable: groupedViewPortrait
     }
 }
