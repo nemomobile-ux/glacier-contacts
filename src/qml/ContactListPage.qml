@@ -52,7 +52,7 @@ Page {
             ToolButton{
                 iconSource: "image://theme/user-plus"
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"));
+                    pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"), {add : true});
                 }
             }
         ]
