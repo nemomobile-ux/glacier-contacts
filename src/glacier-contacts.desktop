@@ -2,6 +2,6 @@
 Type=Application
 Name=People
 Icon=/usr/share/glacier-contacts/icon-app-contacts.png
-Exec=/usr/bin/glacier-contacts
+Exec=invoker --type=nemomobile -s /usr/bin/glacier-contacts
 Comment=Nemo People Application
 Name[ru]=Контакты
