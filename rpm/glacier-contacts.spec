@@ -62,5 +62,6 @@ desktop-file-install --delete-original       \
 %defattr(-,root,root,-)
 %{_bindir}/glacier-contacts
 %{_datadir}/applications/glacier-contacts.desktop
+%{_datadir}/mapplauncherd/privileges.d/glacier-contacts.privileges
 %{_datadir}/glacier-contacts
 %{_libdir}/qt5/qml/org/nemomobile/qmlcontacts/*

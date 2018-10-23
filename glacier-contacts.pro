@@ -26,6 +26,10 @@ icon.files = icon-app-contacts.png
 icon.path = /usr/share/$${PROJECT_NAME}
 INSTALLS += icon
 
+privileges.files = rpm/glacier-contacts.privileges
+privileges.path = /usr/share/mapplauncherd/privileges.d/
+INSTALLS += privileges
+
 qml.files = src/qml/*.qml
 qml.files += src/qml/*.js
 qml.path = /usr/share/$${PROJECT_NAME}/qml
