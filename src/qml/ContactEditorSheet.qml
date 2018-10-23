@@ -77,14 +77,12 @@ Page {
         else
             data_avatar.originalSource = contact.avatarPath
 
-        phoneRepeater.setModelData(contact.phoneNumbers)
-        emailRepeater.setModelData(contact.emailAddresses)
+        phoneRepeater.setModelData(contact.phoneDetails)
+        emailRepeater.setModelData(contact.emailDetails)
     }
 
     Flickable {
         anchors.fill: parent
-        contentHeight: childrenRect.height + Theme.itemSpacingMedium * 2
-
 
         Button {
             id: avatarRect
@@ -99,7 +97,7 @@ Page {
 
             onClicked: {
                 var avatarPicker = pageStack.push(Qt.resolvedUrl("AvatarPickerSheet.qml"), { contact: contact })
-                avatarPicker.avatarPicked.disconnect()
+
                 avatarPicker.avatarPicked.connect(function(avatar) {
                     data_avatar.source = avatar
                 });
@@ -143,13 +141,16 @@ Page {
             font.pixelSize: Theme.fontSizeLarge
         }
 
+
         Column {
             id: phones
             anchors{
                 top: data_last.bottom
                 topMargin: Theme.itemSpacingMedium
+                left: parent.left
+                leftMargin: Theme.itemSpacingMedium
             }
-            width: parent.width
+            width: parent.width-Theme.itemSpacingMedium*2
             spacing: Theme.itemSpacingMedium
 
 
@@ -160,20 +161,24 @@ Page {
             }
         }
 
+
         Column {
             id: mails
             anchors{
                 top: phones.bottom
                 topMargin: Theme.itemSpacingMedium
+                left: parent.left
+                leftMargin: Theme.itemSpacingMedium
             }
             spacing: Theme.itemSpacingMedium
-            width: parent.width
+            width: parent.width-Theme.itemSpacingMedium*2
             EditableList {
                 id: emailRepeater
                 placeholderText: qsTr("Email address")
                 width: parent.width
             }
         }
+
 
         Button{
             id: saveButton

@@ -47,18 +47,16 @@ Repeater {
     property bool isSetup: false
 
     function setModelData(modelData) {
-        if(!modelData) {
-            return
-        }
-
         isSetup = false
         model.clear()
 
-        for (var i = 0; i < modelData.length; ++i) {
-            model.append({ data: modelData[i] })
+        if(modelData) {
+            for (var i = 0; i < modelData.length; ++i) {
+                root.model.append({ data: modelData[i] })
+            }
         }
 
-        model.append({ data: "" })
+        root.model.append({ data: "" })
         originalData = modelData
         isSetup = true
     }
@@ -68,8 +66,11 @@ Repeater {
 
         // the -1 here is because we want to skip the always-added empty on the
         // end of the model.
-        for (var i = 0; i < model.count - 1; ++i) {
-            modelData.push(model.get(i).data)
+        for (var i = 0; i < root.model.count; ++i) {
+            var item = model.get(i).data
+            if(item.lenght > 0) {
+                modelData.push()
+            }
         }
         return modelData;
     }
