@@ -58,6 +58,16 @@ Page {
         }
     }
 
+    Component.onCompleted: {
+        if(add) {
+            contact = newPreson
+        }
+    }
+
+    Person {
+        id: newPreson
+    }
+
     onContactChanged: {
         data_first.text = contact.firstName
         data_last.text = contact.lastName
@@ -196,17 +206,20 @@ Page {
         contact.firstName = data_first.text
         contact.lastName = data_last.text
         contact.avatarPath = data_avatar.source
-        contact.phoneNumbers = phoneRepeater.modelData()
-        contact.emailAddresses = emailRepeater.modelData()
+        contact.phoneDetails = phoneRepeater.modelData()
+        contact.emailDetails = emailRepeater.modelData()
 
         // TODO: this isn't asynchronous
         app.contactListModel.savePerson(contact)
 
         // TODO: revisit
-        if (contact.dirty)
+        if (contact.dirty) {
             console.log("[saveContact] Unable to create new contact due to missing info");
-        else
+        } else {
             console.log("[saveContact] Saved contact")
+            onClicked: pageStack.pop();
+        }
+
     }
 }
 
