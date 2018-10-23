@@ -47,6 +47,10 @@ Repeater {
     property bool isSetup: false
 
     function setModelData(modelData) {
+        if(!modelData) {
+            return
+        }
+
         isSetup = false
         model.clear()
 
