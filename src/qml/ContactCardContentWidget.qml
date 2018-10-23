@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
+ * Copyright (C) 2018 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -71,114 +72,66 @@ Flickable {
         }
     }
 
-    /*SelectionDialog {
-        id: selectionDialog
-        property int mode: 0 // 0: call, 1: sms, 2: message, 3: mail
-
-        onSelectedIndexChanged: {
-            if (mode == 0)
-                callManager.dial(callManager.defaultProviderId, contact.phoneNumbers[selectedIndex]);
-            else if (mode == 1)
-                onClicked: messagesInterface.startSMS(contact.phoneNumbers[selectedIndex])
-            else if (mode == 2)
-                messagesInterface.startConversation(contact.accountPaths[selectedIndex], contact.accountUris[selectedIndex])
-                
-            accept()
-        }
-    }*/
-
     Button {
         id: callButton
-        anchors.top: header.bottom
-        anchors.topMargin: Theme.itemSpacingMedium
-        anchors.left: parent.left
-        anchors.leftMargin: Theme.itemSpacingMedium
-        height: contact.phoneNumbers.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
+        anchors{
+            top: header.bottom
+            topMargin: Theme.itemSpacingMedium
+            left: parent.left
+            leftMargin: Theme.itemSpacingMedium
+        }
+        height: contact.phoneDetails.length > 0 ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
         width: parent.width - Theme.itemSpacingMedium * 2
-        visible: height != 0
+        visible: contact.phoneDetails.length > 0
         iconSource: "image://theme/icon-m-telephony-incoming-call"; // TODO: icon-m-toolbar-make-call
-        text: "Call"
+        text: qsTr("Call")
         onClicked: {
             if (contact.phoneNumbers.length == 1) {
                 callManager.dial(callManager.defaultProviderId, contact.phoneNumbers[0])
                 return
             }
-
-            selectionDialog.mode = 0
-            selectionDialog.titleText = qsTr("Call %1").arg(contact.firstName)
-            selectionDialog.model = contact.phoneNumbers
-            selectionDialog.open()
         }
     }
 
     Button {
         id: smsButton
-        anchors.top: callButton.bottom
-        anchors.topMargin: Theme.itemSpacingMedium
-        anchors.left: parent.left
-        anchors.leftMargin: Theme.itemSpacingMedium
-        height: contact.phoneNumbers.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
+        anchors{
+            top: callButton.bottom
+            topMargin: Theme.itemSpacingMedium
+            left: parent.left
+            leftMargin: Theme.itemSpacingMedium
+        }
+        height: contact.phoneDetails.length > 0 ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
         width: parent.width - Theme.itemSpacingMedium * 2
-        visible: height != 0
+        visible: contact.phoneDetails.length > 0
         iconSource: "image://theme/icon-m-toolbar-send-chat";
         text: qsTr("SMS")
         onClicked: {
-            if (contact.phoneNumbers.length == 1) {
+            if (contact.phoneDetails.length == 1) {
                 messagesInterface.startSMS(contact.phoneNumbers[0])
                 return
             }
-
-            selectionDialog.mode = 1
-            selectionDialog.titleText = qsTr("SMS %1").arg(contact.firstName)
-            selectionDialog.model = contact.phoneNumbers
-            selectionDialog.open()
-        }
-    }
-
-    Button {
-        id: messageButton
-        anchors.top: smsButton.bottom
-        anchors.topMargin: Theme.itemSpacingMedium
-        anchors.left: parent.left
-        anchors.leftMargin: Theme.itemSpacingMedium
-        height: contact.accountUris.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
-        width: parent.width - Theme.itemSpacingMedium * 2
-        visible: height != 0
-        iconSource: "image://theme/icon-m-toolbar-send-chat";
-        text: qsTr("Message")
-        onClicked: {
-            if (contact.accountUris.length == 1) {
-                messagesInterface.startConversation(contact.accountPaths[0], contact.accountUris[0])
-                return
-            }
-
-            selectionDialog.mode = 2
-            selectionDialog.titleText = qsTr("Message %1").arg(contact.firstName)
-            selectionDialog.model = contact.accountUris
-            selectionDialog.open()
         }
     }
 
     Button {
         id: mailButton
-        anchors.top: messageButton.bottom
-        anchors.topMargin: Theme.itemSpacingMedium
-        anchors.left: parent.left
-        anchors.leftMargin: Theme.itemSpacingMedium
-        height: contact.emailAddresses.length ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
+        anchors{
+            top: smsButton.bottom
+            topMargin: Theme.itemSpacingMedium
+            left: parent.left
+            leftMargin: Theme.itemSpacingMedium
+        }
+        height: contact.emailDetails.length > 0 ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
         width: parent.width - Theme.itemSpacingMedium * 2
-        visible: height != 0
+        visible: contact.emailDetails.length > 0
         iconSource: "image://theme/icon-m-toolbar-send-sms"; // TODO: icon-m-toolbar-send-email
         text: qsTr("Mail")
         onClicked: {
             console.log("TODO: integrate with mail client")
-            if (contact.emailAddresses.length == 1)
+            if (contact.emailDetails.length == 0) {
                 return
-
-            selectionDialog.mode = 3
-            selectionDialog.titleText = qsTr("Mail %1").arg(contact.firstName)
-            selectionDialog.model = contact.emailAddresses
-            selectionDialog.open()
+            }
         }
     }
 }
