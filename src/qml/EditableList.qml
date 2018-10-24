@@ -68,35 +68,63 @@ Repeater {
         // end of the model.
         for (var i = 0; i < root.model.count; ++i) {
             var item = model.get(i).data
-            if(item.lenght > 0) {
-                modelData.push()
-            }
+            modelData.push(item)
+
         }
+        console.log("LOOK AT ME!", modelData)
+
         return modelData;
     }
 
-    delegate: TextField {
-        text: model.data
-        placeholderText: root.placeholderText
+    delegate: Item{
+        id: mainLine
         width: root.width
+        height: textField.height
 
-        onTextChanged: {
-            if (!root.isSetup)
-                return
+        TextField {
+            id: textField
+            text: model.data
+            placeholderText: root.placeholderText
+            width: root.width-height
 
-            root.model.get(index).data = text
-            if (index == (root.model.count - 1)) {
-                root.model.append({ data: "" })
-            } else if (text == "" && index != (root.model.count - 1)) {
-                root.model.remove(index)
+            onTextChanged: {
+                if (!root.isSetup)
+                    return
+
+                root.model.get(index).data = text
+                if (text == "" && index != (root.model.count - 1)) {
+                    root.model.remove(index)
+                }
+                if (!root.originalData[index] && text != "") {
+                    edited = true
+                } else if(root.originalData[index] && root.originalData[index] != text) {
+                    edited = true
+                }
+                else {
+                    edited = false
+                }
             }
-            if (!root.originalData[index] && text != "") {
-                edited = true
-            } else if(root.originalData[index] && root.originalData[index] != text) {
-                edited = true
+        }
+
+        Image{
+            id: addNewButton
+            width: mainLine.height*0.8
+            height: width
+
+            source: "image://theme/plus-circle"
+
+            anchors{
+                top: mainLine.top
+                topMargin: mainLine.height*0.1
+                right: mainLine.right
+                rightMargin: mainLine.height*0.1
             }
-            else {
-                edited = false
+
+            MouseArea{
+                anchors.fill: parent
+                onClicked: {
+                    root.model.append({ data: "" })
+                }
             }
         }
     }
