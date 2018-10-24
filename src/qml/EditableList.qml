@@ -42,6 +42,9 @@ Repeater {
     property string placeholderText
     property bool edited : false
     property variant originalData
+
+    property string editable
+
     model: ListModel {
     }
     property bool isSetup: false
@@ -52,7 +55,7 @@ Repeater {
 
         if(modelData) {
             for (var i = 0; i < modelData.length; ++i) {
-                root.model.append({ data: modelData[i] })
+                root.model.append({ data: modelData[i][editable] })
             }
         }
 
@@ -92,9 +95,7 @@ Repeater {
                     return
 
                 root.model.get(index).data = text
-                if (text == "" && index != (root.model.count - 1)) {
-                    root.model.remove(index)
-                }
+
                 if (!root.originalData[index] && text != "") {
                     edited = true
                 } else if(root.originalData[index] && root.originalData[index] != text) {

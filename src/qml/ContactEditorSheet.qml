@@ -84,6 +84,8 @@ Page {
     Flickable {
         anchors.fill: parent
 
+        contentHeight: childrenRect.height*1.2
+
         Button {
             id: avatarRect
             width: parent.width/3
@@ -157,6 +159,7 @@ Page {
 
             EditableList {
                 id: phoneRepeater
+                editable: "number"
                 placeholderText: qsTr("Phone number")
                 width: parent.width
             }
@@ -175,6 +178,7 @@ Page {
             width: parent.width-Theme.itemSpacingMedium*2
             EditableList {
                 id: emailRepeater
+                editable: "address"
                 placeholderText: qsTr("Email address")
                 width: parent.width
             }
@@ -212,8 +216,24 @@ Page {
         contact.firstName = data_first.text
         contact.lastName = data_last.text
         contact.avatarPath = data_avatar.source
-        contact.phoneDetails = phoneRepeater.modelData()
-        contact.emailDetails = emailRepeater.modelData()
+
+        /*Format phones*/
+        var phoneDetails = []
+        var phones = phoneRepeater.model
+        for(var i=0; i < phones.count; i++) {
+            var phone = phones.get(i).data
+            phoneDetails.push(makePhoneNumber(phone))
+        }
+        contact.phoneDetails = phoneDetails
+
+        /*Format mails*/
+        var emailDetails = []
+        var mails = emailRepeater.model
+        for(var i=0; i < mails.count; i++) {
+            var mail = mails.get(i).data
+            emailDetails.push(makeEmailAddress(mail))
+        }
+        contact.emailDetails = emailDetails
 
         // TODO: this isn't asynchronous
         app.contactListModel.savePerson(contact)
@@ -225,7 +245,25 @@ Page {
             console.log("[saveContact] Saved contact")
             onClicked: pageStack.pop();
         }
+    }
 
+    /*TODO: add types, labels and etc*/
+    function makePhoneNumber(phone) {
+        return {
+            number: phone,
+            type: Person.PhoneNumberType,
+            subTypes: 0,
+            label: 0,
+            index: -1
+        }
+    }
+
+    function makeEmailAddress(mail) {
+        return {
+            address: mail,
+            type: Person.EmailAddressType,
+            label: 0
+        }
     }
 }
 
