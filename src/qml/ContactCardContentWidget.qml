@@ -86,8 +86,8 @@ Flickable {
         iconSource: "image://theme/icon-m-telephony-incoming-call"; // TODO: icon-m-toolbar-make-call
         text: qsTr("Call")
         onClicked: {
-            if (contact.phoneNumbers.length == 1) {
-                callManager.dial(callManager.defaultProviderId, contact.phoneNumbers[0])
+            if (contact.phoneDetails.length > 0) {
+                callManager.dial(callManager.defaultProviderId, contact.phoneDetails[0].number)
                 return
             }
         }
@@ -107,8 +107,8 @@ Flickable {
         iconSource: "image://theme/icon-m-toolbar-send-chat";
         text: qsTr("SMS")
         onClicked: {
-            if (contact.phoneDetails.length == 1) {
-                messagesInterface.startSMS(contact.phoneNumbers[0])
+            if (contact.phoneDetails.length > 0) {
+                messagesInterface.startSMS(contact.phoneDetails[0].number)
                 return
             }
         }
