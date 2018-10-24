@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2012 Jolla Ltd.
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
+ * Copyright (C) 2018 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -49,23 +50,22 @@ Page {
         showBackButton: true
     }
 
-    //acceptButtonText: qsTr("Select")
-    //rejectButtonText: qsTr("Cancel")
-
-    //acceptButtonEnabled: avatarGridView.itemSelected
-
     property Person contact
     signal avatarPicked(string pathToAvatar)
 
     Rectangle {
-        // TODO: see if we can get theme asset for inverted background
-        // cannot use theme.inverted, because that will change whole app's theme.
-        color: "black"
-        anchors.fill: parent
+        color: Theme.backgroundColor
+        width: parent.width
+        height: parent.height-accept.height
+
         GalleryView {
             id: avatarGridView
             property string filePath
             property bool itemSelected: false
+
+            width: parent.width
+            height: parent.height
+
             model: GalleryModel { }
             delegate: GalleryDelegate {
                 id: delegateInstance
@@ -78,23 +78,56 @@ Page {
                     }
                 }
                 Rectangle {
-                    color: "blue"
+                    color: Theme.accentColorс
                     opacity: 0.3
                     visible: delegateInstance.GridView.isCurrentItem && avatarGridView.itemSelected
                     anchors.fill: parent
                 }
             }
         }
+
+        Label {
+            id: noPhotoLabel
+            text: qsTr("No photo")
+            anchors.centerIn: parent
+            visible: avatarGridView.model.count == 0
+        }
     }
 
-    /*onAccepted: {
-        avatarPicked(avatarGridView.filePath)
-        avatarGridView.itemSelected = false
-    }
 
-    onRejected: {
-        avatarGridView.itemSelected = false
-    }*/
+    Button {
+        id: cancel
+        width: parent.width / 2
+        height: Theme.itemHeightLarge
+        anchors {
+            left: parent.left
+            bottom: parent.bottom
+        }
+        text: qsTr("Cancel")
+        onClicked: {
+            if(avatarGridView.itemSelected) {
+                avatarGridView.itemSelected = false
+            } else {
+                pageStack.pop()
+            }
+        }
+    }
+    Button {
+        id: accept
+        width: parent.width / 2
+        height: Theme.itemHeightLarge
+        text: qsTr("Select")
+
+        enabled: avatarGridView.itemSelected
+
+        anchors {
+            left: cancel.right
+            bottom: parent.bottom
+        }
+        onClicked: {
+            avatarPicked(avatarGridView.filePath)
+        }
+    }
 }
 
 

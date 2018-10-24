@@ -100,6 +100,7 @@ Page {
 
                 avatarPicker.avatarPicked.connect(function(avatar) {
                     data_avatar.source = avatar
+                    pageStack.pop()
                 });
             }
             ContactAvatarImage {
