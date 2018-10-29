@@ -42,7 +42,6 @@ ListView {
 
     property bool searching: false
 
-    cacheBuffer: height
     section.property: "sectionBucket"
     section.criteria: ViewSection.FirstCharacter
 
