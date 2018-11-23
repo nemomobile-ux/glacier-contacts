@@ -59,6 +59,7 @@ DISTFILES += \
     src/qml/ContactListPage.qml \
     src/qml/DeleteContactDialog.qml \
     src/qml/EditableList.qml \
+    src/qml/PhoneEditableList.qml \
     src/qml/MessagesInterface.qml \
     src/qml/SearchBox.qml \
     src/glacier-contacts.desktop \

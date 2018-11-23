@@ -86,9 +86,12 @@ Flickable {
         iconSource: "image://theme/icon-m-telephony-incoming-call"; // TODO: icon-m-toolbar-make-call
         text: qsTr("Call")
         onClicked: {
-            if (contact.phoneDetails.length > 0) {
+            //if contact have only one phone - just call
+            if (contact.phoneDetails.length == 1) {
                 callManager.dial(callManager.defaultProviderId, contact.phoneDetails[0].number)
                 return
+            } else {
+            //if more - showing select dialog
             }
         }
     }
@@ -108,7 +111,7 @@ Flickable {
         text: qsTr("SMS")
         onClicked: {
             if (contact.phoneDetails.length > 0) {
-                messagesInterface.startSMS(contact.phoneDetails[0].number)
+                messagesInterface.startConversation(callManager.defaultProviderId, contact.phoneDetails[0].number)
                 return
             }
         }

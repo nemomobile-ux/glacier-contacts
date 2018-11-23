@@ -8,16 +8,7 @@ DBusInterface {
     iface: "org.nemomobile.qmlmessages"
 
     function startConversation(localUid, remoteUid) {
-        typedCall('startConversation', [
-            { 'type':'s', 'value':localUid },
-            { 'type':'s', 'value':remoteUid }
-        ])
-    }
-
-    function startSMS(phoneNumber) {
-        typedCall('startSMS', [
-            { 'type':'s', 'value':phoneNumber }
-        ])
+        messagesInterface.call('startConversation', [localUid,  remoteUid])
     }
 }
 

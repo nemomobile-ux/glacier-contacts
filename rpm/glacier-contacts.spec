@@ -60,7 +60,7 @@ desktop-file-install --delete-original       \
    %{buildroot}%{_datadir}/applications/*.desktop
 
 mkdir -p %{buildroot}%{_datadir}/mapplauncherd/privileges.d/
-cp %{SOURCE1} %{buildroot}%{_datadir}/mapplauncherd/privileges.d/
+#cp %{SOURCE1} %{buildroot}%{_datadir}/mapplauncherd/privileges.d/
 
 %files
 %defattr(-,root,root,-)
