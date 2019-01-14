@@ -90,52 +90,24 @@ Page {
         delegate: ContactListDelegate {
             id: card
 
-            actions: Rectangle{
-                width: childrenRect.width
-                height: parent.height
-                Rectangle{
-                    height: parent.height
-                    width: card.height*2
-                    Image{
-                        id: editImage
-                        source: "image://theme/pencil"
-                        height: card.height*0.8
-                        width: height
-                        anchors{
-                            left: parent.left
-                            leftMargin: card.height*0.1
-                            top: parent.top
-                            topMargin: card.height*0.1
-                        }
-                        MouseArea{
-                            anchors.fill: parent
-                            onClicked: {
-                                pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"), { contact: model.person })
-                            }
-                        }
+            actions: [
+                ActionButton{
+                    id: editButton
+                    iconSource: "image://theme/pencil"
+                    onClicked: {
+                        pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"), { contact: model.person })
                     }
-
-                    Image{
-                        id: deleteImage
-                        source:  "image://theme/trash"
-                        height: card.height*0.8
-                        width: height
-                        anchors{
-                            left: editImage.right
-                            leftMargin:card.height*0.2
-                            top: parent.top
-                            topMargin: card.height*0.1
-                        }
-                        MouseArea{
-                            anchors.fill: parent
-                            onClicked: {
-                                deleteConfirmationDialog.contact = model.person
-                                deleteConfirmationDialog.visible = true
-                            }
-                        }
+                },
+                ActionButton{
+                    id: deleteButton
+                    iconSource:  "image://theme/trash"
+                    onClicked: {
+                        deleteConfirmationDialog.contact = model.person
+                        deleteConfirmationDialog.visible = true
                     }
                 }
-            }
+
+            ]
 
             onClicked: pageStack.push(Qt.resolvedUrl("ContactCardPage.qml"), { contact: model.person })
         }
