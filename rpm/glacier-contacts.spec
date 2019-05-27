@@ -12,7 +12,6 @@ Group:      Applications/System
 License:    GPLv2
 URL:        https://github.com/nemomobile-ux/glacier-contacts
 Source0:    %{name}-%{version}.tar.bz2
-Source1:    glacier-contacts.privileges
 
 Requires:   qt-components-qt5
 Requires:   qt5-qtquickcontrols
@@ -60,7 +59,6 @@ desktop-file-install --delete-original       \
    %{buildroot}%{_datadir}/applications/*.desktop
 
 mkdir -p %{buildroot}%{_datadir}/mapplauncherd/privileges.d/
-#cp %{SOURCE1} %{buildroot}%{_datadir}/mapplauncherd/privileges.d/
 
 %files
 %defattr(-,root,root,-)

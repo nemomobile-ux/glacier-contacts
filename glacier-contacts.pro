@@ -26,7 +26,7 @@ icon.files = icon-app-contacts.png
 icon.path = /usr/share/$${PROJECT_NAME}
 INSTALLS += icon
 
-privileges.files = rpm/glacier-contacts.privileges
+privileges.files = src/glacier-contacts.privileges
 privileges.path = /usr/share/mapplauncherd/privileges.d/
 INSTALLS += privileges
 
