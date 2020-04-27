@@ -78,8 +78,7 @@ Page {
             data_avatar.originalSource = contact.avatarPath
 
         emailRepeater.setModelData(contact.emailDetails)
-
-        phoneRepeater.model = contact.phoneDetails
+        phoneRepeater.setModelData(contact.phoneDetails)
     }
 
     Flickable {
@@ -146,7 +145,7 @@ Page {
         }
 
 
-        Item {
+        Column {
             id: phones
             anchors{
                 top: data_last.bottom
@@ -155,21 +154,11 @@ Page {
                 leftMargin: Theme.itemSpacingMedium
             }
             width: parent.width-Theme.itemSpacingMedium*2
-            height: childrenRect.height+Theme.itemSpacingMedium*2
-
-            Label{
-                id: phonesLabel
-                text: qsTr("Phones")
-                font.bold: true
-
-                anchors.top: parent.top
-            }
-
-            PhoneEditableList {
+            EditableList {
                 id: phoneRepeater
                 width: parent.width
-
-                anchors.top: phonesLabel.bottom
+                editable: "phoneDetails"
+                placeholderText: qsTr("Phones")
             }
         }
 
