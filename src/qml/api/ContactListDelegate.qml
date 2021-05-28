@@ -46,10 +46,12 @@ ListViewItemWithActions {
         if (model.person == null || model.person.avatarPath == "image://theme/user" || model.person.avatarPath == "image://theme/icon-m-telephony-contact-avatar")
         {
             av_source = "image://theme/user"
+            iconColorized = true;
         }
         else
         {
             av_source = model.person.avatarPath
+            iconColorized = false;
         }
         return av_source;
     }
