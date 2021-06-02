@@ -84,7 +84,7 @@ Page {
     Flickable {
         anchors.fill: parent
 
-        contentHeight: childrenRect.height*1.2
+        contentHeight: contentItem.childrenRect.height + 2 * Theme.itemSpacingMedium;
 
         Button {
             id: avatarRect
