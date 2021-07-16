@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
- *
+ * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
  * You may use this file under the terms of the BSD license as follows:
  *
  * "Redistribution and use in source and binary forms, with or without
@@ -39,6 +39,8 @@ import org.nemomobile.qmlcontacts 1.0
 import org.nemomobile.contacts 1.0
 import org.nemomobile.voicecall 1.0
 
+import "../components"
+
 Page {
     id: detailViewPage
     property Person contact
@@ -58,7 +60,7 @@ Page {
             ,
             ToolButton{
                 iconSource: "image://theme/pencil"
-                onClicked: pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"), { contact: contact })
+                onClicked: pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: contact })
             },
             ToolButton{
                 iconSource: contact.favorite ? "image://theme/bookmark" : "image://theme/bookmark-o"

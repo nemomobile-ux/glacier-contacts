@@ -15,6 +15,8 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.contacts 1.0
 
+import "pages"
+
 ApplicationWindow {
     id: app
 
