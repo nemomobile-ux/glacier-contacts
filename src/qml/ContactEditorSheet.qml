@@ -53,7 +53,7 @@ Page {
 
     Connections {
         target: contact
-        onContactRemoved: {
+        function onContactRemoved() {
             reject()
         }
     }

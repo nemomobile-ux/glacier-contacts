@@ -83,12 +83,12 @@ Page {
 
     Connections {
         target: contact
-        onContactRemoved: pageStack.pop()
+        function onContactRemoved() { pageStack.pop() }
     }
 
     Connections {
         target: deleteConfirmationDialog
-        onAccepted: pageStack.pop();
+        function onAccepted() { pageStack.pop(); }
     }
 
     ContactCardContentWidget {
