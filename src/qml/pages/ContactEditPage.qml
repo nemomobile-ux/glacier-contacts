@@ -101,7 +101,7 @@ Page {
             }
 
             onClicked: {
-                var avatarPicker = pageStack.push(Qt.resolvedUrl("AvatarPickerSheet.qml"), { contact: contact })
+                var avatarPicker = pageStack.push(Qt.resolvedUrl("../components/AvatarPickerSheet.qml"), { contact: contact })
 
                 avatarPicker.avatarPicked.connect(function(avatar) {
                     data_avatar.source = avatar
@@ -160,7 +160,7 @@ Page {
             EditableList {
                 id: phoneRepeater
                 width: parent.width
-                editable: "phoneDetails"
+                editable: "number"
                 placeholderText: qsTr("Phones")
             }
         }

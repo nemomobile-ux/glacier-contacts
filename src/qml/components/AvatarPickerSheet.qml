@@ -78,7 +78,7 @@ Page {
                     }
                 }
                 Rectangle {
-                    color: Theme.accentColorс
+                    color: Theme.accentColor
                     opacity: 0.3
                     visible: delegateInstance.GridView.isCurrentItem && avatarGridView.itemSelected
                     anchors.fill: parent
