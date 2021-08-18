@@ -157,7 +157,7 @@ Page {
             EditableList {
                 id: phoneRepeater
                 width: parent.width
-                editable: "phoneDetails"
+                editable: "number"
                 placeholderText: qsTr("Phones")
             }
         }
