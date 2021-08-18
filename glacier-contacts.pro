@@ -26,13 +26,9 @@ icon.files = icon-app-contacts.png
 icon.path = /usr/share/$${PROJECT_NAME}
 INSTALLS += icon
 
-privileges.files = src/glacier-contacts.privileges
-privileges.path = /usr/share/mapplauncherd/privileges.d/
-INSTALLS += privileges
 
-qml.files = src/qml/*.qml
-qml.files += src/qml/*.js
-qml.path = /usr/share/$${PROJECT_NAME}/qml
+qml.files = src/qml
+qml.path = /usr/share/$${PROJECT_NAME}/
 INSTALLS += qml
 
 # qml API we provide
@@ -51,17 +47,17 @@ DISTFILES += \
     src/qml/api/ContactListWidget.qml \
     src/qml/api/ContactListDelegate.qml \
     src/qml/api/ContactAvatarImage.qml \
-    src/qml/AvatarPickerSheet.qml \
-    src/qml/ContactCardContentWidget.qml \
-    src/qml/ContactCardPage.qml \
-    src/qml/ContactEditorSheet.qml \
-    src/qml/ContactImportSheet.qml \
-    src/qml/ContactListPage.qml \
-    src/qml/DeleteContactDialog.qml \
-    src/qml/EditableList.qml \
-    src/qml/PhoneEditableList.qml \
-    src/qml/MessagesInterface.qml \
-    src/qml/SearchBox.qml \
+    src/qml/components/AvatarPickerSheet.qml \
+    src/qml/components/ContactCardContentWidget.qml \
+    src/qml/components/ContactImportSheet.qml \
+    src/qml/components/DeleteContactDialog.qml \
+    src/qml/components/EditableList.qml \
+    src/qml/components/PhoneEditableList.qml \
+    src/qml/components/MessagesInterface.qml \
+    src/qml/components/SearchBox.qml \
+    src/qml/pages/ContactListPage.qml \
+    src/qml/pages/ContactCardPage.qml \
+    src/qml/pages/ContactEditPage.qml \
     src/glacier-contacts.desktop \
     rpm/glacier-contacts.spec \
     src/qml/glacier-contacts.qml \

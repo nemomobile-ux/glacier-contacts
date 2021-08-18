@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
- * Copyright (C) 2017 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -41,6 +41,8 @@ import Nemo.Dialogs 1.0
 import org.nemomobile.qmlcontacts 1.0
 import org.nemomobile.contacts 1.0
 
+import "../components"
+
 Page {
     id: groupedViewPage
 
@@ -52,7 +54,7 @@ Page {
             ToolButton{
                 iconSource: "image://theme/user-plus"
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"), {add : true});
+                    pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), {add : true});
                 }
             }
         ]
@@ -66,6 +68,8 @@ Page {
         onSearchTextChanged: {
             app.contactListModel.search(searchbox.searchText);
         }
+
+        visible: gvp.count !== 0
     }
 
     Component {
@@ -81,7 +85,7 @@ Page {
         anchors.bottom: parent.bottom
         clip: true
         onAddNewContact: {
-            var editor = pageStack.openSheet(Qt.resolvedUrl("ContactEditorSheet.qml"))
+            var editor = pageStack.openSheet(Qt.resolvedUrl("ContactEditPage.qml"))
             editor.contact = contactComponent.createObject(editor)
         }
 
@@ -95,7 +99,7 @@ Page {
                     id: editButton
                     iconSource: "image://theme/pencil"
                     onClicked: {
-                        pageStack.push(Qt.resolvedUrl("ContactEditorSheet.qml"), { contact: model.person })
+                        pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: model.person })
                     }
                 },
                 ActionButton{
