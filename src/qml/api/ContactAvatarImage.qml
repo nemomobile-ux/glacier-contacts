@@ -58,10 +58,15 @@ Image {
     }
 
     function avatarPotentiallyChanged() {
-        if (contact == null || contact.avatarPath == "image://theme/user" || contact.avatarPath == "image://theme/icon-m-telephony-contact-avatar")
+        if (contact == null || contact.avatarPath == "image://theme/user" || contact.avatarPath == "image://theme/icon-m-telephony-contact-avatar") {
             source = "image://theme/user"
-        else
-            source = "image://nemoThumbnail/" + contact.avatarPath
+        } else {
+            if (String(contact.avatarPath).startsWith("image://")) { // don't add thumbnail if already image provider
+                source = contact.avatarPath
+            } else {
+                source = "image://nemothumbnail/" + contact.avatarPath
+            }
+        }
     }
 
     onStatusChanged: {

@@ -75,10 +75,15 @@ Page {
         data_first.text = contact.firstName
         data_last.text = contact.lastName
         data_avatar.contact = contact
-        if (contact.avatarPath != "image://theme/user" )
-            data_avatar.originalSource = "image://nemothumbnail/" + contact.avatarPath
-        else
+        if (contact.avatarPath != "image://theme/user" ) {
+            if (String(contact.avatarPath).startsWith("image://")) { // don't add thumbnail if already image provider
+                data_avatar.originalSource = contact.avatarPath
+            } else {
+                data_avatar.originalSource = "image://nemothumbnail/" + contact.avatarPath
+            }
+        } else {
             data_avatar.originalSource = contact.avatarPath
+        }
 
         emailRepeater.setModelData(contact.emailDetails)
         phoneRepeater.setModelData(contact.phoneDetails)
