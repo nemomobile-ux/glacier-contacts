@@ -4,101 +4,150 @@
 <context>
     <name>AvatarPickerSheet</name>
     <message>
-        <location filename="../src/qml/AvatarPickerSheet.qml" line="48"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="49"/>
         <source>Add contact photo</source>
         <translation>Добавить фото контакта</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
+        <source>No photo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Отменить</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ContactCardContentWidget</name>
     <message>
-        <location filename="../src/qml/ContactCardContentWidget.qml" line="108"/>
         <source>Call %1</source>
-        <translation>Позвонить %1</translation>
+        <translation type="vanished">Позвонить %1</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactCardContentWidget.qml" line="124"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="87"/>
+        <source>Call</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="111"/>
         <source>SMS</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactCardContentWidget.qml" line="132"/>
-        <source>SMS %1</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/ContactCardContentWidget.qml" line="148"/>
         <source>Message</source>
-        <translation>Сообщение</translation>
+        <translation type="vanished">Сообщение</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactCardContentWidget.qml" line="156"/>
         <source>Message %1</source>
-        <translation>Сообщение %1</translation>
+        <translation type="vanished">Сообщение %1</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactCardContentWidget.qml" line="172"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="132"/>
         <source>Mail</source>
         <translation>Почта</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactCardContentWidget.qml" line="179"/>
         <source>Mail %1</source>
-        <translation>Отправить почту %1</translation>
+        <translation type="vanished">Отправить почту %1</translation>
+    </message>
+</context>
+<context>
+    <name>ContactEditPage</name>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="51"/>
+        <source>Add contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="51"/>
+        <source>Edit contact</source>
+        <translation type="unfinished">Редактировать</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="129"/>
+        <source>First name</source>
+        <translation type="unfinished">Имя</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="143"/>
+        <source>Last name</source>
+        <translation type="unfinished">Фамилия</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="169"/>
+        <source>Phones</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="187"/>
+        <source>Email address</source>
+        <translation type="unfinished">Адресс почты</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
+        <source>Save</source>
+        <translation type="unfinished">Сохранить</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="209"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Отменить</translation>
     </message>
 </context>
 <context>
     <name>ContactEditorSheet</name>
     <message>
-        <location filename="../src/qml/ContactEditorSheet.qml" line="46"/>
         <source>Edit contact</source>
-        <translation>Редактировать</translation>
+        <translation type="vanished">Редактировать</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactEditorSheet.qml" line="112"/>
         <source>First name</source>
-        <translation>Имя</translation>
+        <translation type="vanished">Имя</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactEditorSheet.qml" line="118"/>
         <source>Last name</source>
-        <translation>Фамилия</translation>
+        <translation type="vanished">Фамилия</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactEditorSheet.qml" line="136"/>
         <source>Phone number</source>
-        <translation>Номер телефона</translation>
+        <translation type="vanished">Номер телефона</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactEditorSheet.qml" line="151"/>
         <source>Email address</source>
-        <translation>Адресс почты</translation>
+        <translation type="vanished">Адресс почты</translation>
     </message>
 </context>
 <context>
     <name>ContactImportSheet</name>
     <message>
-        <location filename="../src/qml/ContactImportSheet.qml" line="45"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="45"/>
         <source>Import</source>
         <translation>Импорт</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactImportSheet.qml" line="46"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="46"/>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactImportSheet.qml" line="93"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="93"/>
         <source>Import completed</source>
         <translation>Иморт отменён</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactImportSheet.qml" line="98"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
         <source>Imported</source>
         <translation>Импортированно</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactImportSheet.qml" line="98"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
         <source>contacts</source>
         <translation>контактов</translation>
     </message>
@@ -106,27 +155,27 @@
 <context>
     <name>ContactListPage</name>
     <message>
-        <location filename="../src/qml/ContactListPage.qml" line="49"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="51"/>
         <source>Contacts</source>
         <translation>Контакты</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactListPage.qml" line="63"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="65"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactListPage.qml" line="101"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="125"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactListPage.qml" line="102"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="126"/>
         <source>Export completed</source>
         <translation>Экспорт закончен</translation>
     </message>
     <message>
-        <location filename="../src/qml/ContactListPage.qml" line="103"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="127"/>
         <source>Export completed to </source>
         <translation type="unfinished"></translation>
     </message>
@@ -134,12 +183,12 @@
 <context>
     <name>ContactListWidget</name>
     <message>
-        <location filename="../src/qml/api/ContactListWidget.qml" line="64"/>
+        <location filename="../src/qml/api/ContactListWidget.qml" line="52"/>
         <source>Contact not found.</source>
         <translation>Контакт не найден.</translation>
     </message>
     <message>
-        <location filename="../src/qml/api/ContactListWidget.qml" line="64"/>
+        <location filename="../src/qml/api/ContactListWidget.qml" line="52"/>
         <source>You haven&apos;t added any contacts yet.</source>
         <translation>У Вас ещё нет добавленных контактов.</translation>
     </message>
@@ -147,22 +196,26 @@
 <context>
     <name>DeleteContactDialog</name>
     <message>
-        <location filename="../src/qml/DeleteContactDialog.qml" line="43"/>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation type="vanished">Удалить</translation>
     </message>
     <message>
-        <location filename="../src/qml/DeleteContactDialog.qml" line="44"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="49"/>
+        <source>Delete contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="50"/>
         <source>Are you sure?</source>
         <translation>Вы уверены?</translation>
     </message>
     <message>
-        <location filename="../src/qml/DeleteContactDialog.qml" line="45"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="51"/>
         <source>Yes</source>
         <translation>Да</translation>
     </message>
     <message>
-        <location filename="../src/qml/DeleteContactDialog.qml" line="46"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="52"/>
         <source>No</source>
         <translation>Нет</translation>
     </message>
@@ -178,101 +231,77 @@
 <context>
     <name>glacier-contacts</name>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="23"/>
-        <location filename="../src/qml/glacier-contacts.qml" line="49"/>
         <source>New contact</source>
-        <translation>Новый контакт</translation>
+        <translation type="vanished">Новый контакт</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="24"/>
         <source>All</source>
-        <translation>Все</translation>
+        <translation type="vanished">Все</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="25"/>
         <source>Favorites</source>
-        <translation>Избранные</translation>
+        <translation type="vanished">Избранные</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="28"/>
         <source>View</source>
         <extracomment>Load the details for the selected contact</extracomment>
-        <translation>Просмотр</translation>
+        <translation type="vanished">Просмотр</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="29"/>
         <source>Share</source>
-        <translation>Поделиться</translation>
+        <translation type="vanished">Поделиться</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="30"/>
         <source>Email</source>
-        <translation>Почта</translation>
+        <translation type="vanished">Почта</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="33"/>
         <source>Favorite</source>
         <comment>Verb</comment>
         <extracomment>Add favorite flag / add contact to favorites list</extracomment>
-        <translation>Избраный</translation>
+        <translation type="vanished">Избраный</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="36"/>
         <source>Unfavorite</source>
         <extracomment>Remove favorite flag / remove contact from favorites list</extracomment>
-        <translation>Не избраный</translation>
+        <translation type="vanished">Не избраный</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="38"/>
         <source>Edit</source>
-        <translation>Редактировать</translation>
+        <translation type="vanished">Редактировать</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="39"/>
         <source>Save</source>
-        <translation>Сохранить</translation>
+        <translation type="vanished">Сохранить</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="40"/>
         <source>Cancel</source>
-        <translation>Отменить</translation>
+        <translation type="vanished">Отменить</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="41"/>
         <source>Delete</source>
-        <translation>Удалить</translation>
+        <translation type="vanished">Удалить</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="44"/>
-        <source>Delete Confirmation</source>
-        <extracomment>Confirmation of deletion - ensure the user wants to delete the contact</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="47"/>
         <source>Contacts</source>
-        <translation>Контакты</translation>
+        <translation type="vanished">Контакты</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="48"/>
         <source>Contact details</source>
-        <translation>Информация о контакте</translation>
+        <translation type="vanished">Информация о контакте</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="50"/>
         <source>Edit contacts</source>
-        <translation>Редактировать контакт</translation>
+        <translation type="vanished">Редактировать контакт</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="53"/>
         <source>this contact</source>
         <extracomment>If we are unable to get the contact name, use &apos;this contact&apos; instead</extracomment>
-        <translation>этот коннтакт</translation>
+        <translation type="vanished">этот коннтакт</translation>
     </message>
     <message>
-        <location filename="../src/qml/glacier-contacts.qml" line="54"/>
         <source>Are you sure you want to remove %1 from your contacts?</source>
-        <translation>Вы уверены, что хотите удалить %1 из списка ваших контактов?</translation>
+        <translation type="vanished">Вы уверены, что хотите удалить %1 из списка ваших контактов?</translation>
     </message>
 </context>
 </TS>
