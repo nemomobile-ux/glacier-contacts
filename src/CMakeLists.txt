@@ -13,7 +13,7 @@ target_link_libraries(glacier-contacts
 install(TARGETS glacier-contacts RUNTIME
 	DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(DIRECTORY qml
-    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-gallery
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-contacts
     PATTERN "api" EXCLUDE)
 install(DIRECTORY qml/api/
     DESTINATION
