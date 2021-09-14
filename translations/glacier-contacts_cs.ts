@@ -100,15 +100,11 @@
         <source>Import completed</source>
         <translation>Import dokončen</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>Imported</source>
-        <translation>Importováno</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>contacts</source>
-        <translation>kontakty</translation>
+        <source>Imported %n contacts</source>
+        <comment>ContactImportSheet</comment>
+        <translation><numerusform>Naimportoval se 1 kontakt</numerusform><numerusform>Naimportovali se %n kontakty</numerusform><numerusform>Naimportovalo se %n kontaktů</numerusform><numerusform>Naimportovalo se %n kontaktů</numerusform></translation>
     </message>
 </context>
 <context>
