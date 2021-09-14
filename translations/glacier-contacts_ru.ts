@@ -106,20 +106,7 @@
         <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
         <source>Imported %n contacts</source>
         <comment>ContactImportSheet</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Imported</source>
-        <translation type="vanished">Импортированно</translation>
-    </message>
-    <message>
-        <source>contacts</source>
-        <translation type="vanished">контактов</translation>
-    </message>
+        <translation><numerusform>Импортировано %n контакт</numerusform><numerusform>Импортировано %n контактов</numerusform><numerusform>Импортировано %n контактов</numerusform><numerusform>Импортировано %n контактов</numerusform></translation>
 </context>
 <context>
     <name>ContactListPage</name>
