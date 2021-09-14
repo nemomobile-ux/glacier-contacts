@@ -100,15 +100,11 @@
         <source>Import completed</source>
         <translation>Иморт отменён</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>Imported</source>
-        <translation>Импортированно</translation>
-    </message>
-    <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>contacts</source>
-        <translation>контактов</translation>
+        <source>Imported %n contacts</source>
+        <comment>ContactImportSheet</comment>
+        <translation><numerusform>Импортировано %n контакт</numerusform><numerusform>Импортировано %n контактов</numerusform><numerusform>Импортировано %n контактов</numerusform><numerusform>Импортировано %n контактов</numerusform></translation>
     </message>
 </context>
 <context>
