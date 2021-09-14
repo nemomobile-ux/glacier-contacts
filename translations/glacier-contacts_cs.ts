@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="cs">
 <context>
     <name>AvatarPickerSheet</name>
     <message>
@@ -100,15 +102,23 @@
         <source>Import completed</source>
         <translation>Import dokončen</translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>Imported</source>
-        <translation>Importováno</translation>
+        <source>Imported %n contacts</source>
+        <comment>ContactImportSheet</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
+        <source>Imported</source>
+        <translation type="vanished">Importováno</translation>
+    </message>
+    <message>
         <source>contacts</source>
-        <translation>kontakty</translation>
+        <translation type="vanished">kontakty</translation>
     </message>
 </context>
 <context>
