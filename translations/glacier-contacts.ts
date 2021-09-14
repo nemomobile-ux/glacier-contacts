@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en">
 <context>
     <name>AvatarPickerSheet</name>
     <message>
@@ -107,6 +107,7 @@
         <source>Imported %n contacts</source>
         <comment>ContactImportSheet</comment>
         <translation type="unfinished">
+            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
