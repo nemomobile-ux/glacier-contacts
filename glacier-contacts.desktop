@@ -5,3 +5,4 @@ Icon=/usr/share/glacier-contacts/icon-app-contacts.png
 Exec=/usr/bin/glacier-contacts
 Comment=Nemo People Application
 Name[ru]=Контакты
+Name[cs]=Kontakty

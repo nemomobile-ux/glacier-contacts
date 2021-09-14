@@ -95,7 +95,7 @@ Sheet {
 
         content: Label {
             color: "white"
-            text: qsTr("Imported") + " " + importCompletedDialog.contactCount + " "+qsTr("contacts")
+            text: qsTr("Imported %n contacts", "ContactImportSheet", importCompletedDialog.contactCount)
             width: parent.width
             height: paintedHeight
         }

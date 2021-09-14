@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en">
 <context>
     <name>AvatarPickerSheet</name>
     <message>
@@ -102,15 +102,14 @@
         <source>Import completed</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
+    <message numerus="yes">
         <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>Imported</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>contacts</source>
-        <translation type="unfinished"></translation>
+        <source>Imported %n contacts</source>
+        <comment>ContactImportSheet</comment>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>

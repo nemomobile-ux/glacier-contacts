@@ -1,27 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" version="2.1">
 <context>
     <name>AvatarPickerSheet</name>
     <message>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="49"/>
         <source>Add contact photo</source>
-        <translation>Přidat fotku kontaktu</translation>
+        <translation>Dodaj zdjęcie do kontaktu</translation>
     </message>
     <message>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
         <source>No photo</source>
-        <translation>Žádná fotka</translation>
+        <translation>Brak zdjęcia</translation>
     </message>
     <message>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
         <source>Select</source>
-        <translation>Zvolit</translation>
+        <translation>Wybierz</translation>
     </message>
 </context>
 <context>
@@ -29,12 +27,12 @@
     <message>
         <location filename="../src/qml/components/ContactCardContentWidget.qml" line="87"/>
         <source>Call</source>
-        <translation>Zavolat</translation>
+        <translation>Zadzwoń</translation>
     </message>
     <message>
         <location filename="../src/qml/components/ContactCardContentWidget.qml" line="111"/>
         <source>SMS</source>
-        <translation>SMS</translation>
+        <translation>Wyślij SMS</translation>
     </message>
     <message>
         <location filename="../src/qml/components/ContactCardContentWidget.qml" line="132"/>
@@ -47,42 +45,42 @@
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="51"/>
         <source>Add contact</source>
-        <translation>Přidat kontakt</translation>
+        <translation>Dodaj kontakt</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="51"/>
         <source>Edit contact</source>
-        <translation>Upravit kontakt</translation>
+        <translation>Edytuj kontakt</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="129"/>
         <source>First name</source>
-        <translation>Křestní jméno</translation>
+        <translation>Imię</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="143"/>
         <source>Last name</source>
-        <translation>Příjmení</translation>
+        <translation>Nazwisko</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="169"/>
         <source>Phones</source>
-        <translation>Telefony</translation>
+        <translation>Numery telefonu</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="187"/>
         <source>Email address</source>
-        <translation>Emailová adresa</translation>
+        <translation>Adres e-mail</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
         <source>Save</source>
-        <translation>Uložit</translation>
+        <translation>Zapisz</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactEditPage.qml" line="209"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Anuluj</translation>
     </message>
 </context>
 <context>
@@ -90,35 +88,27 @@
     <message>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="45"/>
         <source>Import</source>
-        <translation>Importovat</translation>
+        <translation>Importuj</translation>
     </message>
     <message>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="46"/>
         <source>Cancel</source>
-        <translation>Zrušit</translation>
+        <translation>Anuluj</translation>
     </message>
     <message>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="93"/>
         <source>Import completed</source>
-        <translation>Import dokončen</translation>
+        <translation>Zakończono importowanie</translation>
     </message>
-    <message numerus="yes">
+    <message>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
-        <source>Imported %n contacts</source>
-        <comment>ContactImportSheet</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
         <source>Imported</source>
-        <translation type="vanished">Importováno</translation>
+        <translation>Zaimportowano</translation>
     </message>
     <message>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
         <source>contacts</source>
-        <translation type="vanished">kontakty</translation>
+        <translation>kontaktów</translation>
     </message>
 </context>
 <context>
@@ -131,7 +121,7 @@
     <message>
         <location filename="../src/qml/pages/ContactListPage.qml" line="65"/>
         <source>Search</source>
-        <translation>Hledat</translation>
+        <translation>Szukaj</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactListPage.qml" line="125"/>
@@ -141,12 +131,12 @@
     <message>
         <location filename="../src/qml/pages/ContactListPage.qml" line="126"/>
         <source>Export completed</source>
-        <translation>Export dokončen</translation>
+        <translation>Zakończono eksportowanie</translation>
     </message>
     <message>
         <location filename="../src/qml/pages/ContactListPage.qml" line="127"/>
         <source>Export completed to </source>
-        <translation>Export dokončený do </translation>
+        <translation>Eksportowany plik zapisano do pliku</translation>
     </message>
 </context>
 <context>
@@ -154,12 +144,12 @@
     <message>
         <location filename="../src/qml/api/ContactListWidget.qml" line="52"/>
         <source>Contact not found.</source>
-        <translation>Kontakt nenalezen.</translation>
+        <translation>Nie znaleziono kontaktu.</translation>
     </message>
     <message>
         <location filename="../src/qml/api/ContactListWidget.qml" line="52"/>
         <source>You haven&apos;t added any contacts yet.</source>
-        <translation>Ještě jste nepřidali žádné kontakty.</translation>
+        <translation>Nie dodałeś(-aś) jeszcze żadnych kontaktów.</translation>
     </message>
 </context>
 <context>
@@ -167,22 +157,22 @@
     <message>
         <location filename="../src/qml/components/DeleteContactDialog.qml" line="49"/>
         <source>Delete contact</source>
-        <translation>Odstranit kontakt</translation>
+        <translation>Usuń kontakt</translation>
     </message>
     <message>
         <location filename="../src/qml/components/DeleteContactDialog.qml" line="50"/>
         <source>Are you sure?</source>
-        <translation>Jste si jistý?</translation>
+        <translation>Czy na pewno chcesz usunąć ten kontakt?</translation>
     </message>
     <message>
         <location filename="../src/qml/components/DeleteContactDialog.qml" line="51"/>
         <source>Yes</source>
-        <translation>Ano</translation>
+        <translation>Tak</translation>
     </message>
     <message>
         <location filename="../src/qml/components/DeleteContactDialog.qml" line="52"/>
         <source>No</source>
-        <translation>Ne</translation>
+        <translation>Nie</translation>
     </message>
 </context>
 <context>
