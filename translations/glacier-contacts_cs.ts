@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
 <context>
     <name>AvatarPickerSheet</name>
     <message>
@@ -106,19 +104,7 @@
         <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
         <source>Imported %n contacts</source>
         <comment>ContactImportSheet</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Imported</source>
-        <translation type="vanished">Importováno</translation>
-    </message>
-    <message>
-        <source>contacts</source>
-        <translation type="vanished">kontakty</translation>
+        <translation><numerusform>Naimportoval se 1 kontakt</numerusform><numerusform>Naimportovali se %n kontakty</numerusform><numerusform>Naimportovalo se %n kontaktů</numerusform><numerusform>Naimportovalo se %n kontaktů</numerusform></translation>
     </message>
 </context>
 <context>
