@@ -58,6 +58,15 @@ Page {
                 }
             }
         ]
+        drawerLevels: [
+            Button {
+                anchors.horizontalCenter: (parent==undefined) ? undefined : parent.horizontalCenter;
+                text: qsTr("Import contacts")
+                onClicked: {
+                    groupedViewPage.Stack.view.push(Qt.resolvedUrl("../components/ContactImportSheet.qml"))
+                }
+            }
+        ]
     }
 
     SearchBox {

@@ -38,21 +38,27 @@ import QtQuick.Controls.Styles.Nemo 1.0
 
 import org.nemomobile.contacts 1.0
 import org.nemomobile.folderlistmodel 1.0
-import org.nemomobile.qmlfilemuncher 1.0
+import org.nemomobile.filemuncher 1.0
 
-Sheet {
+import Nemo.Dialogs 1.0
+
+
+Page {
     id: newContactViewPage
-    acceptButtonText: qsTr("Import")
-    rejectButtonText: qsTr("Cancel")
+
+    headerTools: HeaderToolsLayout {
+        title: qsTr("Import contacts")
+        showBackButton: false;
+    }
 
     onStatusChanged: {
-        if (status == DialogStatus.Opening) {
+        if (status === Page.Opening) {
             sheetContent.fileName = ""
             folderListModel.refresh()
         }
     }
 
-    content: ListView {
+    ListView {
         id: sheetContent
         anchors.fill: parent
         property string fileName
@@ -65,15 +71,59 @@ Sheet {
         }
 
         delegate: FileListDelegate {
-            selected: sheetContent.fileName == model.fileName
+            iconVisible: false;
+            showActions: false;
+            selected: sheetContent.fileName === model.fileName
+            description: selected ? "selected" : ""
             onClicked: {
                 sheetContent.fileName = model.fileName
-                console.log(model.fileName)
+
+                console.log(model.fileName + " " + sheetContent.fileName + " " + selected)
             }
         }
     }
 
-    onAccepted: doImport();
+    Spinner {
+        anchors.centerIn: parent;
+        state: folderListModel.awaitingResults
+    }
+
+    Label {
+        anchors.centerIn: parent
+        visible: !folderListModel.awaitingResults && (folderListModel.rowCount() === 0)
+        text: qsTr("Please copy *.vcf into %1").arg(DocumentsLocation)
+    }
+
+    Button {
+        id: cancel
+        width: parent.width / 2
+        height: Theme.itemHeightLarge
+        text: qsTr("Cancel")
+        anchors {
+            left: parent.left
+            bottom: parent.bottom
+        }
+        onClicked: {
+            pageStack.pop()
+        }
+    }
+
+    Button {
+        id: accept
+        width: parent.width / 2
+        height: Theme.itemHeightLarge
+        primary: true
+        text: qsTr("Import")
+        enabled: sheetContent.fileName !== ""
+        anchors {
+            left: cancel.right
+            bottom: parent.bottom
+        }
+        onClicked: {
+            doImport();
+        }
+    }
+
 
     function doImport() {
         // TODO: would be nice if folderlistmodel had a role for the full
@@ -87,17 +137,12 @@ Sheet {
     Dialog {
         id: importCompletedDialog
         property int contactCount: 0
-
-        title: Label {
-            color: "white"
-            text: qsTr("Import completed")
-        }
-
-        content: Label {
-            color: "white"
-            text: qsTr("Imported %n contacts", "ContactImportSheet", importCompletedDialog.contactCount)
-            width: parent.width
-            height: paintedHeight
+        inline: false;
+        subLabelText: qsTr("Imported %n contacts", "ContactImportSheet", importCompletedDialog.contactCount)
+        headingText: qsTr("Import completed")
+        acceptText: qsTr("Ok")
+        onAccepted: {
+            pageStack.pop();
         }
     }
 }
