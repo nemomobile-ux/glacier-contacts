@@ -55,7 +55,4 @@ ListView {
         horizontalAlignment:  Text.AlignHCenter
     }
 
-    ScrollDecorator{
-        flickable: groupedViewPortrait
-    }
 }

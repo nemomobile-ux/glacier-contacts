@@ -100,6 +100,10 @@ Page {
         callManager: callManager
     }
 
+    ScrollDecorator {
+        flickable: detailViewContact
+    }
+
 
     DeleteContactDialog {
         id: deleteConfirmationDialog

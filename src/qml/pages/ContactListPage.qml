@@ -69,7 +69,7 @@ Page {
             app.contactListModel.search(searchbox.searchText);
         }
 
-        visible: gvp.count !== 0
+        visible: (gvp.count !== 0) || (searchText.length > 0)
     }
 
     Component {
@@ -116,6 +116,10 @@ Page {
             onClicked: pageStack.push(Qt.resolvedUrl("ContactCardPage.qml"), { contact: model.person })
         }
 
+    }
+
+    ScrollDecorator {
+        flickable: gvp
     }
 
     QueryDialog {
