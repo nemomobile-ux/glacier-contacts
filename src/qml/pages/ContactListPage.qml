@@ -69,7 +69,6 @@ Page {
             app.contactListModel.search(searchbox.searchText);
         }
 
-        visible: gvp.count !== 0
     }
 
     Component {
