@@ -52,7 +52,7 @@ Flickable {
 
     Item {
         id: header
-        height: avatar.height + Theme.itemSpacingMedium
+        height: Math.max(avatar.height, contactDetails.childrenRect.height) + Theme.itemSpacingMedium
         property int shortSize: parent.parent.width > parent.parent.height ? parent.parent.height : parent.parent.width
         ContactAvatarImage {
             id: avatar
@@ -64,8 +64,10 @@ Flickable {
             height: parent.shortSize * 0.3
         }
         Column {
-            anchors.verticalCenter: avatar.verticalCenter
+            id: contactDetails
+            anchors.top: parent.top;
             anchors.left: avatar.right
+            anchors.right: parent.right
             anchors.margins: Theme.itemSpacingMedium
 
             Label {
