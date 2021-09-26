@@ -118,6 +118,10 @@ Page {
 
     }
 
+    ScrollDecorator {
+        flickable: gvp
+    }
+
     QueryDialog {
         id: exportCompleteDialog
         property string path

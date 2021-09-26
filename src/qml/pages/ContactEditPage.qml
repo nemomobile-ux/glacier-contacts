@@ -90,6 +90,7 @@ Page {
     }
 
     Flickable {
+        id: contactsEditPageFlickable
         anchors.fill: parent
 
         contentHeight: contentItem.childrenRect.height + 2 * Theme.itemSpacingMedium;
@@ -215,6 +216,10 @@ Page {
             }
             onClicked: pageStack.pop();
         }
+    }
+
+    ScrollDecorator {
+        flickable: contactsEditPageFlickable
     }
 
     function saveContact() {
