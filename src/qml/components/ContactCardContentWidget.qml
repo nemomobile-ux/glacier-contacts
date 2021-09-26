@@ -43,7 +43,7 @@ import org.nemomobile.voicecall 1.0
 Flickable {
     id: detailViewPortrait
     contentWidth: parent.width
-    contentHeight: childrenRect.height
+    contentHeight: header.height + actionsColumn.height + 2*Theme.itemSpacingMedium
     flickableDirection: Flickable.VerticalFlick
     clip: true
 
@@ -63,79 +63,81 @@ Flickable {
             width: parent.shortSize * 0.3
             height: parent.shortSize * 0.3
         }
-
-        Label {
+        Column {
             anchors.verticalCenter: avatar.verticalCenter
             anchors.left: avatar.right
-            anchors.leftMargin: Theme.itemSpacingMedium
-            text: contact.displayLabel
-        }
-    }
+            anchors.margins: Theme.itemSpacingMedium
 
-    Button {
-        id: callButton
-        anchors{
-            top: header.bottom
-            topMargin: Theme.itemSpacingMedium
-            left: parent.left
-            leftMargin: Theme.itemSpacingMedium
-        }
-        height: contact.phoneDetails.length > 0 ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
-        width: parent.width - Theme.itemSpacingMedium * 2
-        visible: contact.phoneDetails.length > 0
-        iconSource: "image://theme/icon-m-telephony-incoming-call"; // TODO: icon-m-toolbar-make-call
-        text: qsTr("Call")
-        onClicked: {
-            //if contact have only one phone - just call
-            if (contact.phoneDetails.length == 1) {
-                callManager.dial(callManager.defaultProviderId, contact.phoneDetails[0].number)
-                return
-            } else {
-            //if more - showing select dialog
+            Label {
+                text: contact.displayLabel
+                font.pixelSize: Theme.fontSizeExtraLarge
+            }
+            Label {
+                text: contact.companyName
+            }
+            Label {
+                text: (contact.addressDetails.length > 0) ? contact.addressDetails[0].address : ""
             }
         }
     }
 
-    Button {
-        id: smsButton
-        anchors{
-            top: callButton.bottom
-            topMargin: Theme.itemSpacingMedium
+    Column {
+        id: actionsColumn
+        anchors {
+            top:  header.bottom
             left: parent.left
-            leftMargin: Theme.itemSpacingMedium
+            right: parent.right
+            margins: Theme.itemSpacingMedium
         }
-        height: contact.phoneDetails.length > 0 ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
-        width: parent.width - Theme.itemSpacingMedium * 2
-        visible: contact.phoneDetails.length > 0
-        iconSource: "image://theme/icon-m-toolbar-send-chat";
-        text: qsTr("SMS")
-        onClicked: {
-            if (contact.phoneDetails.length > 0) {
-                messagesInterface.startConversation(callManager.defaultProviderId, contact.phoneDetails[0].number)
-                return
+        spacing: Theme.itemSpacingMedium
+
+
+        Repeater {
+            model: contact.phoneDetails.length
+
+            ListViewItemWithActions {
+                id: callAction
+                height: Theme.itemHeightLarge
+                label: qsTr("Call")
+                description: contact.phoneDetails[index].number
+                icon:  "image://theme/phone"
+                onClicked: {
+                    callManager.dial(callManager.defaultProviderId, contact.phoneDetails[index].number)
+                }
             }
         }
+        Repeater {
+            model: contact.phoneDetails.length
+            ListViewItemWithActions {
+                id: smsAction
+                height: Theme.itemHeightLarge
+                label: qsTr("SMS")
+                description: contact.phoneDetails[index].number
+                icon:  "image://theme/sms"
+                onClicked: {
+                    messagesInterface.startConversation(callManager.defaultProviderId, contact.phoneDetails[index].number)
+
+                }
+            }
+
+
+        }
+
+        Repeater {
+            model: contact.emailDetails.length;
+            ListViewItemWithActions {
+                label: qsTr("Mail")
+                description: contact.emailDetails[index].address
+                icon: "image://theme/envelope"
+                onClicked: {
+                    console.log("TODO: integrate with mail client: " + contact.emailDetails[index].address)
+                }
+
+            }
+        }
+
     }
 
-    Button {
-        id: mailButton
-        anchors{
-            top: smsButton.bottom
-            topMargin: Theme.itemSpacingMedium
-            left: parent.left
-            leftMargin: Theme.itemSpacingMedium
-        }
-        height: contact.emailDetails.length > 0 ? Theme.itemHeightMedium - Theme.itemSpacingMedium : 0
-        width: parent.width - Theme.itemSpacingMedium * 2
-        visible: contact.emailDetails.length > 0
-        iconSource: "image://theme/icon-m-toolbar-send-sms"; // TODO: icon-m-toolbar-send-email
-        text: qsTr("Mail")
-        onClicked: {
-            console.log("TODO: integrate with mail client")
-            if (contact.emailDetails.length == 0) {
-                return
-            }
-        }
-    }
+
 }
 
