@@ -74,7 +74,6 @@ Page {
             iconVisible: false;
             showActions: false;
             selected: sheetContent.fileName === model.fileName
-            description: selected ? "selected" : ""
             onClicked: {
                 sheetContent.fileName = model.fileName
 
