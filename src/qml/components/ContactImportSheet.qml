@@ -60,7 +60,13 @@ Page {
 
     ListView {
         id: sheetContent
-        anchors.fill: parent
+        anchors {
+            top: parent.top;
+            left: parent.left;
+            right: parent.right;
+            bottom: cancel.top;
+            }
+
         property string fileName
 
         model: FolderListModel {
