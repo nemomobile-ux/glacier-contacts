@@ -32,5 +32,5 @@ install(FILES ${QM_FILES}
 
 install(FILES glacier-contacts.desktop
 	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
-install(DIRECTORY icons
-	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR})
+install(FILES icons/icon-app-contacts.png
+	DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/glacier-contacts)
