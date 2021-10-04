@@ -58,6 +58,15 @@ Page {
                 }
             }
         ]
+        drawerLevels: [
+            Button {
+                anchors.horizontalCenter: (parent==undefined) ? undefined : parent.horizontalCenter;
+                text: qsTr("Import contacts")
+                onClicked: {
+                    groupedViewPage.Stack.view.push(Qt.resolvedUrl("../components/ContactImportSheet.qml"))
+                }
+            }
+        ]
     }
 
     SearchBox {
@@ -69,7 +78,7 @@ Page {
             app.contactListModel.search(searchbox.searchText);
         }
 
-        visible: gvp.count !== 0
+        visible: (gvp.count !== 0) || (searchText.length > 0)
     }
 
     Component {
@@ -116,6 +125,10 @@ Page {
             onClicked: pageStack.push(Qt.resolvedUrl("ContactCardPage.qml"), { contact: model.person })
         }
 
+    }
+
+    ScrollDecorator {
+        flickable: gvp
     }
 
     QueryDialog {

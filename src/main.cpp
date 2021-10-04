@@ -45,6 +45,9 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     QGuiApplication *app = GlacierApp::app(argc, argv);
     app->setOrganizationName("NemoMobile");
 
+    QQmlApplicationEngine* engine = GlacierApp::engine();
+    engine->rootContext()->setContextProperty("DocumentsLocation", QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
+
     QQuickWindow *window = GlacierApp::showWindow();
     window->setTitle(QObject::tr("Contacts"));
 

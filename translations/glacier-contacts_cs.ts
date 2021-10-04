@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="cs" version="2.1">
 <context>
     <name>AvatarPickerSheet</name>
     <message>
@@ -27,17 +25,17 @@
 <context>
     <name>ContactCardContentWidget</name>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="87"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="103"/>
         <source>Call</source>
         <translation>Zavolat</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="111"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="116"/>
         <source>SMS</source>
         <translation>SMS</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="132"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="131"/>
         <source>Mail</source>
         <translation>Mail</translation>
     </message>
@@ -55,32 +53,32 @@
         <translation>Upravit kontakt</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="129"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="130"/>
         <source>First name</source>
         <translation>Křestní jméno</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="143"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="144"/>
         <source>Last name</source>
         <translation>Příjmení</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="169"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="170"/>
         <source>Phones</source>
         <translation>Telefony</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="187"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
         <source>Email address</source>
         <translation>Emailová adresa</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="196"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="209"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="210"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
@@ -88,37 +86,40 @@
 <context>
     <name>ContactImportSheet</name>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="45"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="115"/>
         <source>Import</source>
         <translation>Importovat</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="46"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="100"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="50"/>
+        <source>Import contacts</source>
+        <translation>Importovat kontakty</translation>
+    </message>
+    <message>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="93"/>
+        <source>Please copy *.vcf into %1</source>
+        <translation>Prosím zkopírujte *.vcf do %1</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="141"/>
         <source>Import completed</source>
         <translation>Import dokončen</translation>
     </message>
+    <message>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="142"/>
+        <source>Ok</source>
+        <translation>Ok</translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="140"/>
         <source>Imported %n contacts</source>
         <comment>ContactImportSheet</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-        </translation>
-    </message>
-    <message>
-        <source>Imported</source>
-        <translation type="vanished">Importováno</translation>
-    </message>
-    <message>
-        <source>contacts</source>
-        <translation type="vanished">kontakty</translation>
+        <translation><numerusform>Naimportoval se 1 kontakt</numerusform><numerusform>Naimportovali se %n kontakty</numerusform><numerusform>Naimportovalo se %n kontaktů</numerusform><numerusform>Naimportovalo se %n kontaktů</numerusform></translation>
     </message>
 </context>
 <context>
@@ -129,22 +130,27 @@
         <translation>Kontakty</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="65"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="64"/>
+        <source>Import contacts</source>
+        <translation>Importovat kontakty</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="74"/>
         <source>Search</source>
         <translation>Hledat</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="125"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="138"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="126"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="139"/>
         <source>Export completed</source>
         <translation>Export dokončen</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="127"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="140"/>
         <source>Export completed to </source>
         <translation>Export dokončený do </translation>
     </message>
@@ -188,7 +194,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="52"/>
         <source>Contacts</source>
         <translation>Kontakty</translation>
     </message>
