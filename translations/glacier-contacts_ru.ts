@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
 <context>
     <name>AvatarPickerSheet</name>
     <message>
@@ -27,17 +25,17 @@
 <context>
     <name>ContactCardContentWidget</name>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="87"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="103"/>
         <source>Call</source>
         <translation>Позвонить</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="111"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="116"/>
         <source>SMS</source>
         <translation>СМС</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="132"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="131"/>
         <source>Mail</source>
         <translation>Почта</translation>
     </message>
@@ -55,32 +53,32 @@
         <translation>Редактировать контакт</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="129"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="130"/>
         <source>First name</source>
         <translation>Имя</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="143"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="144"/>
         <source>Last name</source>
         <translation>Фамилия</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="169"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="170"/>
         <source>Phones</source>
         <translation>Телефоны</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="187"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
         <source>Email address</source>
         <translation>Электронные почты</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="196"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="209"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="210"/>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
@@ -88,22 +86,37 @@
 <context>
     <name>ContactImportSheet</name>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="45"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="115"/>
         <source>Import</source>
         <translation>Импорт</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="46"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="100"/>
         <source>Cancel</source>
         <translation>Отменить</translation>
     </message>
     <message>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="50"/>
+        <source>Import contacts</source>
+        <translation>Имортировать контакты</translation>
+    </message>
+    <message>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="93"/>
+        <source>Please copy *.vcf into %1</source>
+        <translation>Пожалуйста скопируйте *.vcf в %1</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="141"/>
         <source>Import completed</source>
         <translation>Иморт отменён</translation>
     </message>
+    <message>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="142"/>
+        <source>Ok</source>
+        <translation>Ок</translation>
+    </message>
     <message numerus="yes">
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="98"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="140"/>
         <source>Imported %n contacts</source>
         <comment>ContactImportSheet</comment>
         <translation>
@@ -121,22 +134,27 @@
         <translation>Контакты</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="65"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="64"/>
+        <source>Import contacts</source>
+        <translation>Имортировать контакты</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="74"/>
         <source>Search</source>
         <translation>Поиск</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="125"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="138"/>
         <source>Ok</source>
         <translation>Ок</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="126"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="139"/>
         <source>Export completed</source>
         <translation>Экспорт закончен</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="127"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="140"/>
         <source>Export completed to </source>
         <translation>Экспорт завершён в</translation>
     </message>
@@ -180,7 +198,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="49"/>
+        <location filename="../src/main.cpp" line="52"/>
         <source>Contacts</source>
         <translation>Контакты</translation>
     </message>
