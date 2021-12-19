@@ -88,12 +88,12 @@
 <context>
     <name>ContactImportSheet</name>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="115"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="121"/>
         <source>Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="100"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="106"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -103,22 +103,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="93"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="99"/>
         <source>Please copy *.vcf into %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="141"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="147"/>
         <source>Import completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="142"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="148"/>
         <source>Ok</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/qml/components/ContactImportSheet.qml" line="140"/>
+        <location filename="../src/qml/components/ContactImportSheet.qml" line="146"/>
         <source>Imported %n contacts</source>
         <comment>ContactImportSheet</comment>
         <translation type="unfinished">
