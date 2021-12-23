@@ -202,6 +202,7 @@ Page {
                 leftMargin: Theme.itemSpacingMedium
             }
             onClicked: saveContact()
+            primary: true
             enabled: data_first.edited || data_last.edited || data_avatar.edited || phoneRepeater.edited || emailRepeater.edited
         }
 
