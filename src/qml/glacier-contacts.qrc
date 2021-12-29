@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>components/MessagesInterface.qml</file>
+        <file>components/AvatarPickerSheet.qml</file>
+        <file>components/SearchBox.qml</file>
+        <file>components/EditableList.qml</file>
+        <file>components/ContactImportSheet.qml</file>
+        <file>components/ContactCardContentWidget.qml</file>
+        <file>components/DeleteContactDialog.qml</file>
+        <file>api/ContactListDelegate.qml</file>
+        <file>api/ContactListWidget.qml</file>
+        <file>api/ContactAvatarImage.qml</file>
+        <file>pages/ContactListPage.qml</file>
+        <file>pages/ContactCardPage.qml</file>
+        <file>pages/ContactEditPage.qml</file>
+        <file>glacier-contacts.qml</file>
+    </qresource>
+</RCC>

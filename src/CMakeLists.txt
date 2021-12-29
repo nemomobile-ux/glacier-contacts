@@ -2,7 +2,9 @@ set(SRC
     main.cpp
 )
 
-add_executable(glacier-contacts ${SRC})
+qtquick_compiler_add_resources(RESOURCES qml/glacier-contacts.qrc)
+
+add_executable(glacier-contacts ${SRC} ${RESOURCES})
 
 target_link_libraries(glacier-contacts
 	Qt5::Gui
