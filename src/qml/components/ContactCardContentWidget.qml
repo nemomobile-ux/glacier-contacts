@@ -53,6 +53,7 @@ Flickable {
     Item {
         id: header
         height: Math.max(avatar.height, contactDetails.childrenRect.height) + Theme.itemSpacingMedium
+        width: parent.parent.width
         property int shortSize: parent.parent.width > parent.parent.height ? parent.parent.height : parent.parent.width
         ContactAvatarImage {
             id: avatar
@@ -64,6 +65,7 @@ Flickable {
             height: parent.shortSize * 0.3
         }
         Column {
+
             id: contactDetails
             anchors.top: parent.top;
             anchors.left: avatar.right
@@ -71,14 +73,25 @@ Flickable {
             anchors.margins: Theme.itemSpacingMedium
 
             Label {
+
                 text: contact.displayLabel
-                font.pixelSize: Theme.fontSizeExtraLarge
+                font.pixelSize: Theme.fontSizeLarge
+                anchors.left: parent.left;
+                anchors.right: parent.right
+
+                wrapMode:Text.Wrap
             }
             Label {
                 text: contact.companyName
+                anchors.left: parent.left;
+                anchors.right: parent.right
+                wrapMode:Text.Wrap
             }
             Label {
                 text: (contact.addressDetails.length > 0) ? contact.addressDetails[0].address : ""
+                anchors.left: parent.left;
+                anchors.right: parent.right
+                wrapMode:Text.Wrap
             }
         }
     }
