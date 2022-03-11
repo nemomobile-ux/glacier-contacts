@@ -96,7 +96,7 @@ Repeater {
 
                 root.model.get(index).data = text
 
-                if (!root.originalData[index] && text != "") {
+                if (!root.originalData[index] && text !== "") {
                     edited = true
                 } else if(root.originalData[index] && root.originalData[index] != text) {
                     edited = true
@@ -111,8 +111,9 @@ Repeater {
             id: addNewButton
             width: mainLine.height*0.8
             height: width
+            property bool isAddButton: ((model.data !== "") && (root.model.count > 1))
 
-            source: "image://theme/plus-circle"
+            source: isAddButton ? "image://theme/minus-circle" : "image://theme/plus-circle"
 
             anchors{
                 top: mainLine.top
@@ -124,7 +125,11 @@ Repeater {
             MouseArea{
                 anchors.fill: parent
                 onClicked: {
-                    root.model.append({ data: "" })
+                    if (addNewButton.isAddButton) {
+                        root.model.remove(index)
+                    } else {
+                        root.model.append({ data: "" })
+                    }
                 }
             }
         }
