@@ -104,8 +104,6 @@ Flickable {
             right: parent.right
             margins: Theme.itemSpacingMedium
         }
-        spacing: Theme.itemSpacingMedium
-
 
         Repeater {
             model: contact.phoneDetails.length
