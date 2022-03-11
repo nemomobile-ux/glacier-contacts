@@ -102,6 +102,7 @@ Flickable {
             top:  header.bottom
             left: parent.left
             right: parent.right
+            topMargin: Theme.itemSpacingMedium
         }
 
         Repeater {
