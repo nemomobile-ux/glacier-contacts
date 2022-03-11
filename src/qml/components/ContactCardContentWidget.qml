@@ -151,6 +151,15 @@ Flickable {
             }
         }
 
+        ListViewItemWithActions {
+            visible: !isNaN(contact.birthday)
+            label: contact.birthday.toLocaleDateString()
+            icon: "image://theme/calendar"
+            onClicked: {
+                console.log("TODO: integrate with calendar")
+            }
+        }
+
     }
 
 }
