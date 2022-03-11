@@ -162,6 +162,7 @@ Page {
                 left: parent.left
                 leftMargin: Theme.itemSpacingMedium
             }
+            spacing: Theme.itemSpacingSmall
             width: parent.width-Theme.itemSpacingMedium*2
             EditableList {
                 id: phoneRepeater
@@ -180,7 +181,7 @@ Page {
                 left: parent.left
                 leftMargin: Theme.itemSpacingMedium
             }
-            spacing: Theme.itemSpacingMedium
+            spacing: Theme.itemSpacingSmall
             width: parent.width-Theme.itemSpacingMedium*2
             EditableList {
                 id: emailRepeater
