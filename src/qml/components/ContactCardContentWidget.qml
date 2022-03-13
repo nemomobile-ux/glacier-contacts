@@ -52,7 +52,7 @@ Flickable {
 
     Item {
         id: header
-        height: Math.max(avatar.height, contactDetails.childrenRect.height) + Theme.itemSpacingMedium
+        height: childrenRect.height
         width: parent.parent.width
         property int shortSize: parent.parent.width > parent.parent.height ? parent.parent.height : parent.parent.width
         ContactAvatarImage {
@@ -64,6 +64,30 @@ Flickable {
             width: parent.shortSize * 0.3
             height: parent.shortSize * 0.3
         }
+        Label {
+            id: presence;
+            anchors.top: avatar.bottom
+            anchors.left: parent.left
+            anchors.right: contactDetails.left
+            anchors.margins: Theme.itemSpacingSmall
+            text: presenceToString(detailViewPage.contact.globalPresenceState)
+            horizontalAlignment: Text.AlignHCenter
+            font.pixelSize: Theme.fontSizeTiny
+            function presenceToString(s) {
+                switch (s) {
+                case Person.PresenceAvailable: return qsTr("Available");
+                case Person.PresenceBusy: return qsTr("Busy");
+                case Person.PresenceAway: return qsTr("Away");
+                case Person.PresenceExtendedAway: return qsTr("Extended Away");
+                case Person.PresenceOffline: return qsTr("Offline");
+                case Person.PresenceHidden:
+                case Person.PresenceUnknown:
+                default:
+                    return "";
+                }
+            }
+        }
+
         Column {
 
             id: contactDetails
