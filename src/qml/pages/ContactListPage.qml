@@ -108,7 +108,12 @@ Page {
                     id: editButton
                     iconSource: "image://theme/pencil"
                     onClicked: {
-                        pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: model.person })
+                        if (model.person.addressBook.isAggregate) {
+                            pageStack.push(Qt.resolvedUrl("ContactAggListPage.qml"), { contact: model.person })
+
+                        } else {
+                            pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: model.person })
+                        }
                     }
                 },
                 ActionButton{

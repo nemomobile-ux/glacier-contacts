@@ -195,12 +195,11 @@ Page {
         Button{
             id: saveButton
             text: qsTr("Save")
-            width: parent.width/2-Theme.itemSpacingMedium
+            width: parent.width/2
             anchors{
                 top: mails.bottom
                 topMargin: Theme.itemSpacingMedium
                 left: parent.left
-                leftMargin: Theme.itemSpacingMedium
             }
             onClicked: saveContact()
             primary: true
@@ -210,7 +209,7 @@ Page {
         Button{
             id: cancelButton
             text: qsTr("Cancel")
-            width: parent.width/2-Theme.itemSpacingMedium
+            width: parent.width/2
             anchors{
                 top: mails.bottom
                 topMargin: Theme.itemSpacingMedium

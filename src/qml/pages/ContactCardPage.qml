@@ -60,7 +60,14 @@ Page {
             ,
             ToolButton{
                 iconSource: "image://theme/pencil"
-                onClicked: pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: contact })
+                onClicked: {
+                    if (contact.addressBook.isAggregate) {
+                        pageStack.push(Qt.resolvedUrl("ContactAggListPage.qml"), { contact: contact })
+
+                    } else {
+                        pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: contact })
+                    }
+                }
             },
             ToolButton{
                 iconSource: contact.favorite ? "image://theme/bookmark" : "image://theme/bookmark-o"
