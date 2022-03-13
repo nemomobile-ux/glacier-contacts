@@ -173,14 +173,76 @@ Flickable {
             }
         }
 
+        Repeater {
+            model: contact.websiteDetails.length;
+            ListViewItemWithActions {
+                label: qsTr("Web site")
+                description: contact.websiteDetails[index].url
+                icon: "image://theme/globe"
+                onClicked: {
+                    Qt.openUrlExternally(contact.websiteDetails[index].url);
+                }
+
+            }
+        }
+
+
         ListViewItemWithActions {
             visible: !isNaN(contact.birthday)
-            label: contact.birthday.toLocaleDateString()
-            icon: "image://theme/calendar"
+            label: qsTr("Birthday")
+            description: contact.birthday.toLocaleDateString()
+            icon: "image://theme/birthday-cake"
             onClicked: {
                 console.log("TODO: integrate with calendar")
             }
         }
+
+        Repeater {
+            model: contact.anniversaryDetails.length;
+            ListViewItemWithActions {
+                label: contact.anniversaryDetails[index].label
+                description: contact.anniversaryDetails[index].originalDateTime.toLocaleDateString()
+                icon: "image://theme/calendar"
+                onClicked: {
+                    console.log("TODO: integrate with calendar")
+                }
+
+            }
+        }
+
+        Repeater {
+            model: contact.noteDetails.length;
+            Label {
+                text: contact.noteDetails[index].note
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.leftMargin: Theme.itemSpacingLarge
+                anchors.rightMargin: Theme.itemSpacingLarge
+            }
+        }
+
+
+        Repeater {
+            model: contact.accountDetails.length;
+            ListViewItemWithActions {
+                label: contact.accountDetails[index].accountUri
+                description: contact.accountDetails[index].accountDisplayName
+                icon: contact.accountDetails[index].accountIconPath
+                onClicked: {
+                    console.log("TODO: integrate with accounts")
+                }
+
+            }
+        }
+
+
+        ListViewItemWithActions {
+            icon: "image://theme/address-book-o";
+            label: qsTr("Address book")
+            description: contact.addressBook.name
+            showNext: false;
+        }
+
 
     }
 

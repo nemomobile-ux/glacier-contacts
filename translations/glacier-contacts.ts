@@ -10,20 +10,14 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
-        <source>No photo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="107"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="107"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
         <source>Select</source>
         <translation type="unfinished"></translation>
     </message>
@@ -31,21 +25,69 @@
 <context>
     <name>ContactCardContentWidget</name>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="114"/>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="114"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="78"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="78"/>
+        <source>Available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="79"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="79"/>
+        <source>Busy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="80"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="80"/>
+        <source>Away</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="81"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="81"/>
+        <source>Extended Away</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="82"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="82"/>
+        <source>Offline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="138"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="138"/>
         <source>Call</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="127"/>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="127"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="151"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="151"/>
         <source>SMS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="142"/>
-        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="142"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="166"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="166"/>
         <source>Mail</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="179"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="179"/>
+        <source>Web site</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="192"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="192"/>
+        <source>Birthday</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="241"/>
+        <location filename="../src/qml/components/ContactCardContentWidget.qml" line="241"/>
+        <source>Address book</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -76,26 +118,26 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="170"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="170"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="171"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="171"/>
         <source>Phones</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="189"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="189"/>
         <source>Email address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="196"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="196"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="197"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="197"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="211"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="211"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="212"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="212"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
