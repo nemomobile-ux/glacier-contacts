@@ -44,15 +44,31 @@ QueryDialog {
     id: deleteConfirmationDialog
     property Person contact: Person {}
 
+    onContactChanged: {
+        if ((contact === undefined) || (contact == null)) {
+            return;
+        }
+
+        contact.fetchConstituents();
+    }
+
     inline: false
 
-    subLabelText: qsTr("Delete contact")+ " " + contact.displayLabel + "?"
+    subLabelText: (contact != null) ? (qsTr("Delete contact %1?").arg(contact.displayLabel)) : ""
     headingText: qsTr("Are you sure?")
     acceptText: qsTr("Yes")
     cancelText: qsTr("No")
 
     onAccepted: {
-        app.contactListModel.removePerson(contact)
+        if (!contact.addressBook.isAggregate) {
+            app.contactListModel.removePerson(contact)
+        } else {
+            for (var i = 0; i < contact.constituents.length; i++) {
+                var deletePerson = app.contactListModel.personById(contact.constituents[i])
+                app.contactListModel.removePerson(deletePerson)
+            }
+        }
+
     }
 
     onSelected:{

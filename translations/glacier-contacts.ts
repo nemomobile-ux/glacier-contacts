@@ -246,26 +246,26 @@
 <context>
     <name>DeleteContactDialog</name>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="49"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="49"/>
-        <source>Delete contact</source>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="57"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="57"/>
+        <source>Delete contact %1?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="50"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="50"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="58"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="58"/>
         <source>Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="51"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="51"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="59"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="59"/>
         <source>Yes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="52"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="52"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="60"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="60"/>
         <source>No</source>
         <translation type="unfinished"></translation>
     </message>
