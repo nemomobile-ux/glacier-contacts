@@ -21,6 +21,19 @@
     </message>
 </context>
 <context>
+    <name>ContactAggListPage</name>
+    <message>
+        <location filename="../src/qml/pages/ContactAggListPage.qml" line="17"/>
+        <source>Aggregated contact</source>
+        <translation>Agregovaný kontakt</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/pages/ContactAggListPage.qml" line="35"/>
+        <source>Error: no aggregate contacts found</source>
+        <translation>Chyba: nebyly nalezeny agregované kontakty</translation>
+    </message>
+</context>
+<context>
     <name>ContactCardContentWidget</name>
     <message>
         <location filename="../src/qml/components/ContactCardContentWidget.qml" line="78"/>
@@ -134,8 +147,8 @@
         <translation>Uložit</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="212"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="212"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="211"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="211"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
@@ -207,20 +220,20 @@
         <translation>Hledat</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="138"/>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="138"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="143"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="143"/>
         <source>Ok</source>
         <translation>Ok</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="139"/>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="139"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="144"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="144"/>
         <source>Export completed</source>
         <translation>Export dokončen</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="140"/>
-        <location filename="../src/qml/pages/ContactListPage.qml" line="140"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="145"/>
+        <location filename="../src/qml/pages/ContactListPage.qml" line="145"/>
         <source>Export completed to </source>
         <translation>Export dokončený do </translation>
     </message>
@@ -241,26 +254,26 @@
 <context>
     <name>DeleteContactDialog</name>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="49"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="49"/>
-        <source>Delete contact</source>
-        <translation>Odstranit kontakt</translation>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="57"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="57"/>
+        <source>Delete contact %1?</source>
+        <translation>Odstranit kontakt %1?</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="50"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="50"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="58"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="58"/>
         <source>Are you sure?</source>
         <translation>Jste si jistý?</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="51"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="51"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="59"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="59"/>
         <source>Yes</source>
         <translation>Ano</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="52"/>
-        <location filename="../src/qml/components/DeleteContactDialog.qml" line="52"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="60"/>
+        <location filename="../src/qml/components/DeleteContactDialog.qml" line="60"/>
         <source>No</source>
         <translation>Ne</translation>
     </message>
