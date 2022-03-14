@@ -45,6 +45,15 @@ Page {
     id: detailViewPage
     property Person contact
 
+    onContactChanged: {
+        if ((contact === undefined) || (contact == null)) {
+            return;
+        }
+
+        contact.fetchConstituents();
+    }
+
+
     headerTools:  HeaderToolsLayout {
         id: hTools
         title: contact.displayLabel
@@ -60,7 +69,19 @@ Page {
             ,
             ToolButton{
                 iconSource: "image://theme/pencil"
-                onClicked: pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: contact })
+                onClicked: {
+                    if (contact.addressBook.isAggregate) {
+                        if (contact.constituents.length === 1) {
+                            pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"),
+                                           { contact:  app.contactListModel.personById(contact.constituents[0])})
+                        } else {
+                            pageStack.push(Qt.resolvedUrl("ContactAggListPage.qml"), { contact: contact })
+                        }
+
+                    } else {
+                        pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: contact })
+                    }
+                }
             },
             ToolButton{
                 iconSource: contact.favorite ? "image://theme/bookmark" : "image://theme/bookmark-o"

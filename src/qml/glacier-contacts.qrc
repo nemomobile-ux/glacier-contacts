@@ -10,6 +10,7 @@
         <file>pages/ContactListPage.qml</file>
         <file>pages/ContactCardPage.qml</file>
         <file>pages/ContactEditPage.qml</file>
+        <file>pages/ContactAggListPage.qml</file>
         <file>glacier-contacts.qml</file>
     </qresource>
 </RCC>
