@@ -248,7 +248,7 @@
     <message>
         <location filename="../src/qml/api/ContactListWidget.qml" line="52"/>
         <source>You haven&apos;t added any contacts yet.</source>
-        <translation>Sie haben bisher keine Kontakte hinzugefügt.</translation>
+        <translation>Es wurden noch keine Kontakte hinzugefügt.</translation>
     </message>
 </context>
 <context>
