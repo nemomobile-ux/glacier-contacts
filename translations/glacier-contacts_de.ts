@@ -17,7 +17,7 @@
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
         <source>Select</source>
-        <translation>Select</translation>
+        <translation>Auswählen</translation>
     </message>
 </context>
 <context>
