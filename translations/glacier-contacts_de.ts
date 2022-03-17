@@ -263,7 +263,7 @@
         <location filename="../src/qml/components/DeleteContactDialog.qml" line="58"/>
         <location filename="../src/qml/components/DeleteContactDialog.qml" line="58"/>
         <source>Are you sure?</source>
-        <translation>Sind Sie sicher?</translation>
+        <translation>Soll fortgefahren werden?</translation>
     </message>
     <message>
         <location filename="../src/qml/components/DeleteContactDialog.qml" line="59"/>
