@@ -55,7 +55,7 @@ Repeater {
 
         if(modelData) {
             for (var i = 0; i < modelData.length; ++i) {
-                root.model.append({ data: modelData[i][editable] })
+                root.model.append({ data: modelData[i][editable].toString() })
             }
         }
 
@@ -98,10 +98,9 @@ Repeater {
 
                 if (!root.originalData[index] && text !== "") {
                     edited = true
-                } else if(root.originalData[index] && root.originalData[index] != text) {
+                } else if(root.originalData[index] && root.originalData[index] !== text) {
                     edited = true
-                }
-                else {
+                } else {
                     edited = false
                 }
             }

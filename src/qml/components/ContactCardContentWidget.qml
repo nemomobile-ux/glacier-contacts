@@ -97,25 +97,58 @@ Flickable {
             anchors.margins: Theme.itemSpacingMedium
 
             Label {
-
                 text: contact.displayLabel
                 font.pixelSize: Theme.fontSizeLarge
                 anchors.left: parent.left;
                 anchors.right: parent.right
-
                 wrapMode:Text.Wrap
             }
+
+            Repeater {
+                model: contact.nicknameDetails.length
+                Label {
+                    text: contact.nicknameDetails[index].nickname.trim()
+                    anchors.left: parent.left;
+                    anchors.right: parent.right
+                    wrapMode:Text.Wrap
+                }
+            }
+
             Label {
-                text: contact.companyName
+                text: contact.companyName.trim()
                 anchors.left: parent.left;
                 anchors.right: parent.right
                 wrapMode:Text.Wrap
+                visible: text !== ""
             }
+            Label {
+                text: contact.title.trim()
+                anchors.left: parent.left;
+                anchors.right: parent.right
+                wrapMode:Text.Wrap
+                visible: text !== ""
+            }
+            Label {
+                text: contact.role.trim()
+                anchors.left: parent.left;
+                anchors.right: parent.right
+                wrapMode:Text.Wrap
+                visible: text !== ""
+            }
+            Label {
+                text: contact.department.trim()
+                anchors.left: parent.left;
+                anchors.right: parent.right
+                wrapMode:Text.Wrap
+                visible: text !== ""
+            }
+
             Label {
                 text: (contact.addressDetails.length > 0) ? contact.addressDetails[0].address.trim() : ""
                 anchors.left: parent.left;
                 anchors.right: parent.right
                 wrapMode:Text.Wrap
+                visible: text !== ""
             }
         }
     }
@@ -142,6 +175,7 @@ Flickable {
                     callManager.dial(callManager.defaultProviderId, contact.phoneDetails[index].number)
                 }
             }
+
         }
         Repeater {
             model: contact.phoneDetails.length
@@ -153,7 +187,6 @@ Flickable {
                 icon:  "image://theme/sms"
                 onClicked: {
                     messagesInterface.startConversation(callManager.defaultProviderId, contact.phoneDetails[index].number)
-
                 }
             }
 
@@ -167,7 +200,7 @@ Flickable {
                 description: contact.emailDetails[index].address
                 icon: "image://theme/envelope"
                 onClicked: {
-                    console.log("TODO: integrate with mail client: " + contact.emailDetails[index].address)
+                    console.log("TODO: integrate with mail client: " + JSON.stringify(contact.emailDetails[index]))
                 }
 
             }
@@ -193,18 +226,31 @@ Flickable {
             description: contact.birthday.toLocaleDateString()
             icon: "image://theme/birthday-cake"
             onClicked: {
-                console.log("TODO: integrate with calendar")
+                console.log("TODO: integrate with calendar " + contact.birthday)
             }
         }
 
         Repeater {
             model: contact.anniversaryDetails.length;
             ListViewItemWithActions {
-                label: contact.anniversaryDetails[index].label
-                description: contact.anniversaryDetails[index].originalDateTime.toLocaleDateString()
+                label: anniversarySubTypeToString(contact.anniversaryDetails[index].subType)
+                description: contact.anniversaryDetails[index].originalDate.toLocaleDateString()
                 icon: "image://theme/calendar"
                 onClicked: {
-                    console.log("TODO: integrate with calendar")
+                    console.log("TODO: integrate with calendar " + JSON.stringify(contact.anniversaryDetails[index]))
+                }
+
+            }
+        }
+
+        Repeater {
+            model: contact.accountDetails.length;
+            ListViewItemWithActions {
+                label: contact.accountDetails[index].accountUri
+                description: contact.accountDetails[index].accountDisplayName
+                icon: (contact.accountDetails[index].accountIconPath !== undefined) ? contact.accountDetails[index].accountIconPath : "image://theme/user-circle"
+                onClicked: {
+                    console.log("TODO: integrate with accounts " + JSON.stringify(contact.accountDetails[index]))
                 }
 
             }
@@ -219,21 +265,7 @@ Flickable {
                 anchors.leftMargin: Theme.itemSpacingLarge
                 anchors.rightMargin: Theme.itemSpacingLarge
                 wrapMode: Text.WordWrap
-            }
-        }
-
-
-        Repeater {
-            model: contact.accountDetails.length;
-            ListViewItemWithActions {
-                label: contact.accountDetails[index].accountUri
-                description: contact.accountDetails[index].accountDisplayName
-                icon: (contact.accountDetails[index].accountIconPath !== undefined) ? contact.accountDetails[index].accountIconPath : "image://theme/user-circle"
-                onClicked: {
-                    console.log(JSON.stringify(contact.accountDetails[index]))
-                    console.log("TODO: integrate with accounts")
-                }
-
+                font.pixelSize: Theme.fontSizeTiny
             }
         }
 
@@ -246,6 +278,17 @@ Flickable {
 //        }
 
 
+    }
+
+    function anniversarySubTypeToString(subtype) {
+        switch (subtype) {
+        case Person.AnniversarySubTypeEmployment: return qsTr("Employment");
+        case Person.AnniversarySubTypeEngagement: return qsTr("Engagement");
+        case Person.AnniversarySubTypeHouse:      return qsTr("House");
+        case Person.AnniversarySubTypeMemorial:   return qsTr("Memorial");
+        case Person.AnniversarySubTypeWedding:    return qsTr("Wedding");
+        }
+        return qsTr("Anniversary");
     }
 
 }
