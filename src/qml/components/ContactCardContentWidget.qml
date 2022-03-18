@@ -112,7 +112,7 @@ Flickable {
                 wrapMode:Text.Wrap
             }
             Label {
-                text: (contact.addressDetails.length > 0) ? contact.addressDetails[0].address : ""
+                text: (contact.addressDetails.length > 0) ? contact.addressDetails[0].address.trim() : ""
                 anchors.left: parent.left;
                 anchors.right: parent.right
                 wrapMode:Text.Wrap
@@ -218,6 +218,7 @@ Flickable {
                 anchors.right: parent.right
                 anchors.leftMargin: Theme.itemSpacingLarge
                 anchors.rightMargin: Theme.itemSpacingLarge
+                wrapMode: Text.WordWrap
             }
         }
 
@@ -227,8 +228,9 @@ Flickable {
             ListViewItemWithActions {
                 label: contact.accountDetails[index].accountUri
                 description: contact.accountDetails[index].accountDisplayName
-                icon: contact.accountDetails[index].accountIconPath
+                icon: (contact.accountDetails[index].accountIconPath !== undefined) ? contact.accountDetails[index].accountIconPath : "image://theme/user-circle"
                 onClicked: {
+                    console.log(JSON.stringify(contact.accountDetails[index]))
                     console.log("TODO: integrate with accounts")
                 }
 
@@ -236,12 +238,12 @@ Flickable {
         }
 
 
-        ListViewItemWithActions {
-            icon: "image://theme/address-book-o";
-            label: qsTr("Address book")
-            description: contact.addressBook.name
-            showNext: false;
-        }
+//        ListViewItemWithActions {
+//            icon: "image://theme/address-book-o";
+//            label: qsTr("Address book")
+//            description: contact.addressBook.name
+//            showNext: false;
+//        }
 
 
     }
