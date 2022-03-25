@@ -49,6 +49,7 @@ Q_DECL_EXPORT int main(int argc, char **argv)
     engine->rootContext()->setContextProperty("DocumentsLocation", QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
 
     QQuickWindow *window = GlacierApp::showWindow();
+    window->setIcon(QIcon("/usr/share/glacier-contacts/icon-app-contacts.png"));
     window->setTitle(QObject::tr("Contacts"));
 
     return app->exec();
