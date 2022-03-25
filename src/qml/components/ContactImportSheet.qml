@@ -82,8 +82,6 @@ Page {
             selected: sheetContent.fileName === model.fileName
             onClicked: {
                 sheetContent.fileName = model.fileName
-
-                console.log(model.fileName + " " + sheetContent.fileName + " " + selected)
             }
         }
     }
@@ -94,7 +92,11 @@ Page {
     }
 
     Label {
-        anchors.centerIn: parent
+        anchors.fill: parent;
+        anchors.margins: Theme.itemSpacingSmall
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        wrapMode: Text.Wrap
         visible: !folderListModel.awaitingResults && (folderListModel.rowCount() === 0)
         text: qsTr("Please copy *.vcf into %1").arg(DocumentsLocation)
     }

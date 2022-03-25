@@ -72,9 +72,17 @@ Page {
     }
 
     onContactChanged: {
-        data_first.text = contact.firstName
+
+        data_firstName.text = contact.firstName
+        data_middleName.text = contact.middleName
         data_last.text = contact.lastName
         data_avatar.contact = contact
+        data_company.text = contact.companyName
+        data_title.text = contact.title
+        data_role.text = contact.role
+        data_department.text = contact.department
+        data_birthday.text = contact.birthday
+
         if (contact.avatarPath != "image://theme/user" ) {
             if (String(contact.avatarPath).startsWith("image://")) { // don't add thumbnail if already image provider
                 data_avatar.originalSource = contact.avatarPath
@@ -87,6 +95,11 @@ Page {
 
         emailRepeater.setModelData(contact.emailDetails)
         phoneRepeater.setModelData(contact.phoneDetails)
+        addressDetailsRepeater.setModelData(contact.addressDetails)
+        nicknameDetailsRepeater.setModelData(contact.nicknameDetails)
+        websiteRepeater.setModelData(contact.websiteDetails)
+        anniversaryRepeater.setModelData(contact.anniversaryDetails)
+        noteRepeater.setModelData(contact.noteDetails)
     }
 
     Flickable {
@@ -125,97 +138,144 @@ Page {
             }
         }
 
-        TextField {
-            id: data_first
-            placeholderText: qsTr("First name")
-            property bool edited: text != contact.firstName
+        Column {
+            id: contactFields
+            spacing: Theme.itemSpacingSmall
             anchors {
                 top: avatarRect.bottom;
-                topMargin: Theme.itemSpacingMedium
-                left: parent.left;
-                leftMargin: Theme.itemSpacingMedium
-            }
-            width: parent.width-Theme.itemSpacingMedium*2
-            font.pixelSize: Theme.fontSizeLarge
-        }
-
-        TextField {
-            id: data_last
-            placeholderText: qsTr("Last name")
-            property bool edited: text != contact.lastName
-            anchors {
-                top: data_first.bottom;
-                topMargin: Theme.itemSpacingMedium;
                 left: parent.left
-                leftMargin: Theme.itemSpacingMedium
-            }
-            width: parent.width-Theme.itemSpacingMedium*2
-            font.pixelSize: Theme.fontSizeLarge
-        }
-
-
-        Column {
-            id: phones
-            anchors{
-                top: data_last.bottom
+                right: parent.right;
                 topMargin: Theme.itemSpacingMedium
-                left: parent.left
                 leftMargin: Theme.itemSpacingMedium
+                rightMargin: Theme.itemSpacingMedium
             }
-            spacing: Theme.itemSpacingSmall
-            width: parent.width-Theme.itemSpacingMedium*2
+
+            TextField {
+                id: data_firstName
+                placeholderText: qsTr("First name")
+                property bool edited: text !== contact.firstName
+            }
+
+            TextField {
+                id: data_middleName
+                placeholderText: qsTr("Middle name")
+                property bool edited: text !== contact.middleName
+            }
+
+            TextField {
+                id: data_last
+                property bool edited: text !== contact.lastName
+                placeholderText: qsTr("Last name")
+            }
+
             EditableList {
                 id: phoneRepeater
                 width: parent.width
                 editable: "number"
                 placeholderText: qsTr("Phones")
             }
-        }
 
-
-        Column {
-            id: mails
-            anchors{
-                top: phones.bottom
-                topMargin: Theme.itemSpacingMedium
-                left: parent.left
-                leftMargin: Theme.itemSpacingMedium
-            }
-            spacing: Theme.itemSpacingSmall
-            width: parent.width-Theme.itemSpacingMedium*2
             EditableList {
                 id: emailRepeater
                 editable: "address"
                 placeholderText: qsTr("Email address")
                 width: parent.width
             }
+
+            EditableList {
+                id: websiteRepeater
+                editable: "url"
+                placeholderText: qsTr("Web site")
+                width: parent.width
+            }
+
+            TextField {
+                id: data_company
+                property bool edited: text !== contact.companyName
+                placeholderText: qsTr("Company")
+            }
+
+            TextField {
+                id: data_title
+                property bool edited: text !== contact.title
+                placeholderText: qsTr("Title")
+            }
+
+            TextField {
+                id: data_role
+                property bool edited: text !== contact.role
+                placeholderText: qsTr("Role")
+            }
+
+            TextField {
+                id: data_department
+                property bool edited: text !== contact.department
+                placeholderText: qsTr("Department")
+            }
+
+            EditableList {
+                id: nicknameDetailsRepeater
+                editable: "nickname"
+                width: parent.width
+                placeholderText: qsTr("Nickname")
+            }
+
+            EditableList {
+                id: addressDetailsRepeater
+                width: parent.width
+                editable: "address"
+                placeholderText: qsTr("Address")
+
+            }
+
+            TextField {
+                id: data_birthday
+                property bool edited: text !== contact.birthday
+                placeholderText: qsTr("Birthday")
+            }
+
+            EditableList {
+                id: anniversaryRepeater
+                editable: "originalDate"
+                placeholderText: qsTr("Anniversary")
+                width: parent.width
+            }
+
+            EditableList {
+                id: noteRepeater
+                editable: "note"
+                placeholderText: qsTr("Note")
+                width: parent.width
+            }
+
         }
-
-
-        Button{
-            id: saveButton
-            text: qsTr("Save")
-            width: parent.width/2
+        Row {
             anchors{
-                top: mails.bottom
+                top: contactFields.bottom
                 topMargin: Theme.itemSpacingMedium
                 left: parent.left
+                right: parent.rigth
             }
-            onClicked: saveContact()
-            primary: true
-            enabled: data_first.edited || data_last.edited || data_avatar.edited || phoneRepeater.edited || emailRepeater.edited
-        }
+            width: parent.width
 
-        Button{
-            id: cancelButton
-            text: qsTr("Cancel")
-            width: parent.width/2
-            anchors{
-                top: mails.bottom
-                topMargin: Theme.itemSpacingMedium
-                left: saveButton.right
+            Button{
+                id: saveButton
+                text: qsTr("Save")
+                width: parent.width/2
+                onClicked: saveContact()
+                primary: true
+                enabled: data_firstName.edited || data_middleName.edited || data_last.edited ||
+                         data_company.edited || data_title.edited || data_role.edited || data_department.edited ||
+                         data_avatar.edited || addressDetailsRepeater.edited ||  phoneRepeater.edited || emailRepeater.edited ||
+                         websiteRepeater.edited || data_birthday.edited || anniversaryRepeater.edited || noteRepeater.edited
             }
-            onClicked: pageStack.pop();
+
+            Button{
+                id: cancelButton
+                text: qsTr("Cancel")
+                width: parent.width/2
+                onClicked: pageStack.pop();
+            }
         }
     }
 
@@ -223,28 +283,38 @@ Page {
         flickable: contactsEditPageFlickable
     }
 
+
+
+    function modelToList(model, format_function) {
+        var details = []
+        for(var i = 0; i < model.count; i++) {
+            var item = model.get(i).data
+            details.push(format_function(item))
+        }
+        return details;
+
+    }
+
     function saveContact() {
-        contact.firstName = data_first.text
+        contact.firstName = data_firstName.text
+        contact.middleName = data_middleName.text
         contact.lastName = data_last.text
+        contact.companyName = data_company.text
+        contact.title = data_title.text
+        contact.role = data_role.text
+        contact.department = data_department.text
         contact.avatarPath = data_avatar.source
+        contact.birthday = (data_birthday.text !== "") ? new Date(data_birthday.text) : undefined;
 
-        /*Format phones*/
-        var phoneDetails = []
-        var phones = phoneRepeater.model
-        for(var i=0; i < phones.count; i++) {
-            var phone = phones.get(i).data
-            phoneDetails.push(makePhoneNumber(phone))
-        }
-        contact.phoneDetails = phoneDetails
+        contact.nicknameDetails = modelToList(nicknameDetailsRepeater.model, makeNicknameDetail)
+        contact.addressDetails = modelToList(addressDetailsRepeater.model, makeAddressDetail)
+        contact.phoneDetails = modelToList(phoneRepeater.model, makePhoneNumber);
+        contact.emailDetails = modelToList(emailRepeater.model, makeEmailAddress);
+        contact.websiteDetails = modelToList(websiteRepeater.model, makeWebsiteDetail)
+        contact.anniversaryDetails = modelToList(anniversaryRepeater.model, makeAnniversaryDetail)
+        contact.noteDetails = modelToList(noteRepeater.model, makeNoteDetail)
 
-        /*Format mails*/
-        var emailDetails = []
-        var mails = emailRepeater.model
-        for(var i=0; i < mails.count; i++) {
-            var mail = mails.get(i).data
-            emailDetails.push(makeEmailAddress(mail))
-        }
-        contact.emailDetails = emailDetails
+        contact.recalculateDisplayLabel()
 
         // TODO: this isn't asynchronous
         app.contactListModel.savePerson(contact)
@@ -274,6 +344,43 @@ Page {
             address: mail,
             type: Person.EmailAddressType,
             label: 0
+        }
+    }
+
+    function makeAddressDetail(address) {
+        return {
+            type: Person.AddressType,
+            label: 0,
+            address: address,
+        }
+    }
+    function makeWebsiteDetail(url) {
+        return {
+            type: Person.WebsiteType,
+            label: 0,
+            url: url,
+        }
+    }
+    function makeAnniversaryDetail(originalDate) {
+        return {
+            type: Person.AnniversaryType,
+            label: 0,
+            originalDate: originalDate
+        }
+    }
+    function makeNoteDetail(note) {
+        return {
+            type: Person.NoteType,
+            label: 0,
+            note: note
+        }
+    }
+
+    function makeNicknameDetail(nickname) {
+        return {
+            type: Person.NicknameType,
+            label: 0,
+            nickname: nickname
         }
     }
 }
