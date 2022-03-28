@@ -153,18 +153,21 @@ Page {
             TextField {
                 id: data_firstName
                 placeholderText: qsTr("First name")
+                width: parent.width
                 property bool edited: text !== contact.firstName
             }
 
             TextField {
                 id: data_middleName
                 placeholderText: qsTr("Middle name")
+                width: parent.width
                 property bool edited: text !== contact.middleName
             }
 
             TextField {
                 id: data_last
                 property bool edited: text !== contact.lastName
+                width: parent.width
                 placeholderText: qsTr("Last name")
             }
 
@@ -192,24 +195,28 @@ Page {
             TextField {
                 id: data_company
                 property bool edited: text !== contact.companyName
+                width: parent.width
                 placeholderText: qsTr("Company")
             }
 
             TextField {
                 id: data_title
                 property bool edited: text !== contact.title
+                width: parent.width
                 placeholderText: qsTr("Title")
             }
 
             TextField {
                 id: data_role
                 property bool edited: text !== contact.role
+                width: parent.width
                 placeholderText: qsTr("Role")
             }
 
             TextField {
                 id: data_department
                 property bool edited: text !== contact.department
+                width: parent.width
                 placeholderText: qsTr("Department")
             }
 
@@ -231,6 +238,7 @@ Page {
             TextField {
                 id: data_birthday
                 property bool edited: text !== contact.birthday
+                width: parent.width
                 placeholderText: qsTr("Birthday")
             }
 
