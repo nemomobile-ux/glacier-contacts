@@ -267,7 +267,7 @@
         <location filename="../src/qml/components/ContactImportSheet.qml" line="50"/>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="50"/>
         <source>Import contacts</source>
-        <translation>Kontakte Importieren</translation>
+        <translation>Kontakte importieren</translation>
     </message>
     <message>
         <location filename="../src/qml/components/ContactImportSheet.qml" line="101"/>
