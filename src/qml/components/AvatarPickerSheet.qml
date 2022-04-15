@@ -86,13 +86,12 @@ Page {
             }
         }
 
-        // FIXME Gallery View have own label when no photo available
-//        Label {
-//            id: noPhotoLabel
-//            text: qsTr("No photo")
-//            anchors.centerIn: parent
-//            visible: avatarGridView.model.count === 0
-//        }
+        Label {
+            id: noPhotoLabel
+            text: qsTr("No photo available")
+            anchors.centerIn: parent
+            visible: (avatarGridView.model.count === 0) && !avatarGridView.model.loading
+        }
     }
 
 
