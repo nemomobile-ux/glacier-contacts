@@ -8,14 +8,20 @@
         <translation>Přidat fotku kontaktu</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="107"/>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="107"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
+        <source>No photo available</source>
+        <translation>Fotky nejsou k dispozici</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
         <source>Select</source>
         <translation>Zvolit</translation>
     </message>
@@ -153,98 +159,98 @@
         <translation>Křestní jméno</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="161"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="161"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="162"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="162"/>
         <source>Middle name</source>
         <translation>Prostřední jméno</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="168"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="168"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="171"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="171"/>
         <source>Last name</source>
         <translation>Příjmení</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="175"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="175"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="178"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="178"/>
         <source>Phones</source>
         <translation>Telefony</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="181"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="181"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="184"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="184"/>
         <source>Email address</source>
         <translation>Emailová adresa</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="191"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="191"/>
         <source>Web site</source>
         <translation>Webová stránka</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="199"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="199"/>
         <source>Company</source>
         <translation>Společnost</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="201"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="201"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="206"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="206"/>
         <source>Title</source>
         <translation>Titul</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="207"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="207"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
         <source>Role</source>
         <translation>Role</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
         <source>Department</source>
         <translation>Oddělení</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
         <source>Nickname</source>
         <translation>Přezdívka</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
         <source>Address</source>
         <translation>Adresa</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="242"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="242"/>
         <source>Birthday</source>
         <translation>Narozeniny</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="240"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="240"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="248"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="248"/>
         <source>Anniversary</source>
         <translation>Výročí</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="247"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="247"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="255"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="255"/>
         <source>Note</source>
         <translation>Poznámka</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="263"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="263"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="271"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="271"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="275"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="275"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="283"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="283"/>
         <source>Cancel</source>
         <translation>Zrušit</translation>
     </message>
@@ -377,7 +383,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="52"/>
+        <location filename="../src/main.cpp" line="53"/>
         <source>Contacts</source>
         <translation>Kontakty</translation>
     </message>
