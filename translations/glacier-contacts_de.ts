@@ -8,14 +8,20 @@
         <translation>Kontaktbild hinzufügen</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="107"/>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="107"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
+        <source>No photo available</source>
+        <translation>Kein Foto verfügbar</translation>
+    </message>
+    <message>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
-        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="120"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
+        <location filename="../src/qml/components/AvatarPickerSheet.qml" line="119"/>
         <source>Select</source>
         <translation>Auswählen</translation>
     </message>
@@ -153,98 +159,98 @@
         <translation>Vorname</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="161"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="161"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="162"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="162"/>
         <source>Middle name</source>
         <translation>zweiter Vorname</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="168"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="168"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="171"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="171"/>
         <source>Last name</source>
         <translation>Nachname</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="175"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="175"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="178"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="178"/>
         <source>Phones</source>
         <translation>Telefone</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="181"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="181"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="184"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="184"/>
         <source>Email address</source>
         <translation>Emailadresse</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="188"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="191"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="191"/>
         <source>Web site</source>
         <translation>Webseite</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="195"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="199"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="199"/>
         <source>Company</source>
         <translation>Unternehmen</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="201"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="201"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="206"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="206"/>
         <source>Title</source>
         <translation>Titel</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="207"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="207"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
         <source>Role</source>
         <translation>Rolle</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="213"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
         <source>Department</source>
         <translation>Abteilung</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="220"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
         <source>Nickname</source>
         <translation>Spitzname</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="227"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
         <source>Address</source>
         <translation>Adresse</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="234"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="242"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="242"/>
         <source>Birthday</source>
         <translation>Geburtstag</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="240"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="240"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="248"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="248"/>
         <source>Anniversary</source>
         <translation>Jubiläum</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="247"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="247"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="255"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="255"/>
         <source>Note</source>
         <translation>Notiz</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="263"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="263"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="271"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="271"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="275"/>
-        <location filename="../src/qml/pages/ContactEditPage.qml" line="275"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="283"/>
+        <location filename="../src/qml/pages/ContactEditPage.qml" line="283"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -377,7 +383,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="52"/>
+        <location filename="../src/main.cpp" line="53"/>
         <source>Contacts</source>
         <translation>Kontakte</translation>
     </message>
