@@ -5,7 +5,7 @@
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="49"/>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="49"/>
         <source>Add contact photo</source>
-        <translation>Kontaktbild hinzufügen</translation>
+        <translation>Kontaktfoto hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
