@@ -11,7 +11,7 @@
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="91"/>
         <source>No photo available</source>
-        <translation>Kein Foto verfügbar</translation>
+        <translation>Kein Bild verfügbar</translation>
     </message>
     <message>
         <location filename="../src/qml/components/AvatarPickerSheet.qml" line="106"/>
