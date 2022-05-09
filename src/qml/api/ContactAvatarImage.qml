@@ -39,43 +39,32 @@ import Nemo.Thumbnailer 1.0
 import org.nemomobile.contacts 1.0
 
 Image {
+    id: avatarImage
     fillMode: Image.PreserveAspectCrop
     asynchronous: true
     width: Theme.itemHeightSmall
     height: Theme.itemHeightSmall
     property Person contact
+    property string fullSource
+    source: compute_avatar_path(((contact == undefined) || (contact == null) || contact.avatarPath === undefined) ? "" : contact.avatarPath)
     sourceSize.width: width
     sourceSize.height: width
 
-    onContactChanged: {
-        contact.avatarPathChanged.connect(avatarPotentiallyChanged)
-        avatarPotentiallyChanged();
-    }
-
-    Component.onCompleted: {
-        if (contact == null)
-            avatarPotentiallyChanged();
-    }
-
-    function avatarPotentiallyChanged() {
-        if (contact == null || contact.avatarPath == "image://theme/user" || contact.avatarPath == "image://theme/icon-m-telephony-contact-avatar") {
-            source = "image://theme/user"
-        } else {
-            if (String(contact.avatarPath).startsWith("image://")) { // don't add thumbnail if already image provider
-                source = contact.avatarPath
-            } else {
-                source = "image://nemothumbnail/" + contact.avatarPath
-            }
+    function compute_avatar_path(path) {
+        if ((path === "")
+                || (path === "image://theme/user")
+                || (path === "image://theme/icon-m-telephony-contact-avatar")) {
+            return "image://theme/user"
         }
+        if (String(contact.avatarPath).startsWith("image://")) { // don't add thumbnail if already image provider
+            return path;
+        }
+        return "image://nemothumbnail/" + path;
     }
 
     onStatusChanged: {
-        var fallback = "image://theme/user"
         if (status == Image.Error || status == Image.Null) {
-            if (source == fallback)
-                console.log("ContactAvatarImage failed to load fallback image!");
-            else
-                source = fallback
+             contact.avatarPath = ""
         }
     }
 }
