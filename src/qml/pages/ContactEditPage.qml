@@ -83,16 +83,6 @@ Page {
         data_department.text = contact.department
         data_birthday.text = contact.birthday
 
-        if (contact.avatarPath != "image://theme/user" ) {
-            if (String(contact.avatarPath).startsWith("image://")) { // don't add thumbnail if already image provider
-                data_avatar.originalSource = contact.avatarPath
-            } else {
-                data_avatar.originalSource = "image://nemothumbnail/" + contact.avatarPath
-            }
-        } else {
-            data_avatar.originalSource = contact.avatarPath
-        }
-
         emailRepeater.setModelData(contact.emailDetails)
         phoneRepeater.setModelData(contact.phoneDetails)
         addressDetailsRepeater.setModelData(contact.addressDetails)
@@ -123,14 +113,14 @@ Page {
                 var avatarPicker = pageStack.push(Qt.resolvedUrl("../components/AvatarPickerSheet.qml"), { contact: contact })
 
                 avatarPicker.avatarPicked.connect(function(avatar) {
-                    data_avatar.source = avatar
+                    data_avatar.contact.avatarPath = avatar
                     pageStack.pop()
                 });
             }
             ContactAvatarImage {
                 id: data_avatar
-                property string originalSource
-                property bool edited: source != originalSource
+                property url originalSource
+                property bool edited: fullSource != originalSource
                 width: parent.width - Theme.itemSpacingMedium
                 height: parent.height - Theme.itemSpacingMedium
                 anchors.centerIn: parent
@@ -311,7 +301,8 @@ Page {
         contact.title = data_title.text
         contact.role = data_role.text
         contact.department = data_department.text
-        contact.avatarPath = data_avatar.source
+        contact.avatarPath = data_avatar.contact.avatarPath
+
         contact.birthday = (data_birthday.text !== "") ? new Date(data_birthday.text) : undefined;
 
         contact.nicknameDetails = modelToList(nicknameDetailsRepeater.model, makeNicknameDetail)

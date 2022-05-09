@@ -49,7 +49,6 @@ Page {
         if ((contact === undefined) || (contact == null)) {
             return;
         }
-
         contact.fetchConstituents();
     }
 
