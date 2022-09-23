@@ -40,18 +40,17 @@
 
 #include <glacierapp.h>
 
-Q_DECL_EXPORT int main(int argc, char **argv)
+Q_DECL_EXPORT int main(int argc, char** argv)
 {
-    QGuiApplication *app = GlacierApp::app(argc, argv);
+    QGuiApplication* app = GlacierApp::app(argc, argv);
     app->setOrganizationName("NemoMobile");
 
     QQmlApplicationEngine* engine = GlacierApp::engine();
     engine->rootContext()->setContextProperty("DocumentsLocation", QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation));
 
-    QQuickWindow *window = GlacierApp::showWindow();
+    QQuickWindow* window = GlacierApp::showWindow();
     window->setIcon(QIcon("/usr/share/glacier-contacts/icon-app-contacts.png"));
     window->setTitle(QObject::tr("Contacts"));
 
     return app->exec();
 }
-
