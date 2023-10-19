@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
- * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2023 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -30,11 +30,11 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.6
+import QtQuick
+import QtQuick.Controls
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo
+import Nemo.Controls
 
 import Nemo.Dialogs 1.0
 
@@ -54,7 +54,7 @@ Page {
             ToolButton{
                 iconSource: "image://theme/user-plus"
                 onClicked: {
-                    pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), {add : true});
+                    app.push(Qt.resolvedUrl("ContactEditPage.qml"), {add : true});
                 }
             }
         ]
@@ -63,7 +63,7 @@ Page {
                 anchors.horizontalCenter: (parent==undefined) ? undefined : parent.horizontalCenter;
                 text: qsTr("Import contacts")
                 onClicked: {
-                    groupedViewPage.Stack.view.push(Qt.resolvedUrl("../components/ContactImportSheet.qml"))
+                    app.push(Qt.resolvedUrl("../components/ContactImportSheet.qml"))
                 }
             }
         ]
@@ -94,7 +94,7 @@ Page {
         anchors.bottom: parent.bottom
         clip: true
         onAddNewContact: {
-            var editor = pageStack.openSheet(Qt.resolvedUrl("ContactEditPage.qml"))
+            var editor = app.openSheet(Qt.resolvedUrl("ContactEditPage.qml"))
             editor.contact = contactComponent.createObject(editor)
         }
 
@@ -109,10 +109,10 @@ Page {
                     iconSource: "image://theme/pencil"
                     onClicked: {
                         if (model.person.addressBook.isAggregate) {
-                            pageStack.push(Qt.resolvedUrl("ContactAggListPage.qml"), { contact: model.person })
+                            app.push(Qt.resolvedUrl("ContactAggListPage.qml"), { contact: model.person })
 
                         } else {
-                            pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: model.person })
+                            app.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: model.person })
                         }
                     }
                 },
@@ -127,7 +127,7 @@ Page {
 
             ]
 
-            onClicked: pageStack.push(Qt.resolvedUrl("ContactCardPage.qml"), { contact: model.person })
+            onClicked: app.push(Qt.resolvedUrl("ContactCardPage.qml"), { contact: model.person })
         }
 
     }

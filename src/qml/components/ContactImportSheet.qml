@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
  * Copyright (C) 2012 Jolla Ltd.
+ * Copyright (C) 2023 Chupligin Sergey <neochapay@gmail.com>
  *
  * You may use this file under the terms of the BSD license as follows:
  *
@@ -30,11 +31,11 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.6
+import QtQuick
+import QtQuick.Controls
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo
+import Nemo.Controls
 
 import org.nemomobile.contacts 1.0
 import org.nemomobile.folderlistmodel 1.0
@@ -111,7 +112,7 @@ Page {
             bottom: parent.bottom
         }
         onClicked: {
-            pageStack.pop()
+            app.pop()
         }
     }
 
@@ -149,7 +150,7 @@ Page {
         headingText: qsTr("Import completed")
         acceptText: qsTr("Ok")
         onAccepted: {
-            pageStack.pop();
+            app.pop();
         }
     }
 }

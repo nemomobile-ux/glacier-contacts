@@ -2,14 +2,14 @@ set(SRC
     main.cpp
 )
 
-qtquick_compiler_add_resources(RESOURCES qml/glacier-contacts.qrc)
+qt_add_resources(RESOURCES qml/glacier-contacts.qrc)
 
 add_executable(glacier-contacts ${SRC} ${RESOURCES})
 
 target_link_libraries(glacier-contacts
-	Qt5::Gui
-	Qt5::Qml
-	Qt5::Quick
+        Qt6::Gui
+        Qt6::Qml
+        Qt6::Quick
 	Glacier::App)
 
 install(TARGETS glacier-contacts RUNTIME

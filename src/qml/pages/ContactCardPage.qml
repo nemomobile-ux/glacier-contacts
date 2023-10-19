@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2011-2012 Robin Burchell <robin+mer@viroteck.net>
- * Copyright (C) 2017-2021 Chupligin Sergey <neochapay@gmail.com>
+ * Copyright (C) 2017-2023 Chupligin Sergey <neochapay@gmail.com>
  * You may use this file under the terms of the BSD license as follows:
  *
  * "Redistribution and use in source and binary forms, with or without
@@ -29,11 +29,11 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
  */
 
-import QtQuick 2.6
+import QtQuick
+import QtQuick.Controls
 
-import QtQuick.Controls 1.0
-import QtQuick.Controls.Nemo 1.0
-import QtQuick.Controls.Styles.Nemo 1.0
+import Nemo
+import Nemo.Controls
 
 import org.nemomobile.qmlcontacts 1.0
 import org.nemomobile.contacts 1.0
@@ -71,14 +71,14 @@ Page {
                 onClicked: {
                     if (contact.addressBook.isAggregate) {
                         if (contact.constituents.length === 1) {
-                            pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"),
+                            app.push(Qt.resolvedUrl("ContactEditPage.qml"),
                                            { contact:  app.contactListModel.personById(contact.constituents[0])})
                         } else {
-                            pageStack.push(Qt.resolvedUrl("ContactAggListPage.qml"), { contact: contact })
+                            app.push(Qt.resolvedUrl("ContactAggListPage.qml"), { contact: contact })
                         }
 
                     } else {
-                        pageStack.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: contact })
+                        app.push(Qt.resolvedUrl("ContactEditPage.qml"), { contact: contact })
                     }
                 }
             },
@@ -105,12 +105,12 @@ Page {
 
     Connections {
         target: contact
-        function onContactRemoved() { pageStack.pop() }
+        function onContactRemoved() { app.pop() }
     }
 
     Connections {
         target: deleteConfirmationDialog
-        function onAccepted() { pageStack.pop(); }
+        function onAccepted() { app.pop(); }
     }
 
     ContactCardContentWidget {
