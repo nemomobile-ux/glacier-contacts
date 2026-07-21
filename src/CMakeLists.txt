@@ -10,7 +10,7 @@ target_link_libraries(glacier-contacts
         Qt6::Gui
         Qt6::Qml
         Qt6::Quick
-	Glacier::App)
+        PkgConfig::GLACIERAPP)
 
 install(TARGETS glacier-contacts RUNTIME
 	DESTINATION ${CMAKE_INSTALL_BINDIR})

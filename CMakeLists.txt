@@ -18,7 +18,7 @@ set(INSTALL_QML_IMPORT_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/qt6/qml"
 
 set(QT_MIN_VERSION "6.0.0")
 find_package(Qt6 COMPONENTS Gui Qml Quick LinguistTools REQUIRED)
-find_package(Glacier 1.0 COMPONENTS App REQUIRED)
+pkg_search_module(GLACIERAPP REQUIRED glacierapp IMPORTED_TARGET)
 
 add_subdirectory(src)
 
