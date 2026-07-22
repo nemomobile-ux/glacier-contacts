@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.6.0)
+cmake_minimum_required(VERSION 3.10)
 
 project(glacier-contacts
-	VERSION 0.7.0
+	VERSION 0.9
 	DESCRIPTION "The Glacier contacts")
 
 set(CMAKE_AUTOMOC ON)
@@ -17,6 +17,7 @@ set(INSTALL_QML_IMPORT_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/qt6/qml"
         CACHE PATH "Custom QML import installation directory")
 
 set(QT_MIN_VERSION "6.0.0")
+find_package(PkgConfig REQUIRED)
 find_package(Qt6 COMPONENTS Gui Qml Quick LinguistTools REQUIRED)
 pkg_search_module(GLACIERAPP REQUIRED glacierapp IMPORTED_TARGET)
 
